@@ -8,13 +8,13 @@ description: >-
 
 ## External
 
-Essa função estará acessivel somente de fora do contrato, ele próprio não conseguirá chama-la.
+Essa função estará acessivel somente de fora do contrato, ele próprio não conseguirá chamá-la.
 
 ![](<../.gitbook/assets/image (39).png>)
 
 ## Internal
 
-Funções com esse parâmetro estão acessíveis somente no próprio contrato que à contêm e contratos que forem "_**filhos**_" desse, ou seja contatos que herdam suas funções e variaveis. Para entender melhor sobre herança veja a sessão [24.-heranca.md](extra-avancado/24.-heranca.md "mention")
+Funções com esse parâmetro estão acessíveis somente no próprio contrato que a contêm e contratos que forem "_**filhos**_" desse, ou seja contatos que herdam suas funções e variáveis. Para entender melhor sobre herança veja a sessão [24.-heranca.md](extra-avancado/24.-heranca.md "mention")
 
 ![](<../.gitbook/assets/image (102).png>)
 
