@@ -2,7 +2,7 @@
 
 ## block.chainid
 
-A rede principal da Ethereum mainnet possui um id 1 e uma das redes de teste chamda Rinkeby possui id 3. Enquanto outras redes EVM como a Binance possui id 56, você pode ver uma lista completa de Chain IDs em [https://chainlist.org/](https://chainlist.org).
+A rede principal da Ethereum mainnet possui um id 1 e uma das redes de teste chamada Rinkeby possui id 3. Enquanto outras redes EVM como a Binance possui id 56, você pode ver uma lista completa de Chain IDs em [https://chainlist.org/](https://chainlist.org).
 
 ![](<../.gitbook/assets/image (99).png>)
 
