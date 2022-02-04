@@ -21,7 +21,7 @@ O comando pragma é usado para definir qual será a versão da linguagem solidit
 
 ![](<../.gitbook/assets/image (114).png>)
 
-repare no parâmetro .5 entre o .0 e .11 ele indica que é a versão principal, isso quer dizer que um compilador executando a versão 0.5.12 também funcionará, assim como 0.5.12 ou .13
+repare no parâmetro .8 entre o .0 e .11 ele indica que é a versão principal, isso quer dizer que um compilador executando a versão 0.8.12 também funcionará, assim como 0.8.12 ou .13
 
 
 
