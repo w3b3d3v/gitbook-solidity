@@ -40,4 +40,4 @@ Parecido com tabelas ou outras estruturas multidi-mencionais como tensores, tamb
 
 Nesse caso temos uma lista que contém outras listas de shitcoins.
 
-Para acessar um valor guardado em uma lista de listas precisamos encontra-lo pelos indices da seguinte forma: _**nomedalista\[primeiro\_indice]\[segundo\_indice].**_
+Para acessar um valor guardado em uma lista de listas precisamos encontrá-lo pelos indices da seguinte forma: _**nomedalista\[primeiro\_indice]\[segundo\_indice].**_
