@@ -26,11 +26,11 @@ Essa estrutura pode variar, dependendo do contexto dessa função algumas _palav
 
 ## Parâmetros
 
-Funções podem receber parâmetros externos, veja a função à baixo.
+Funções podem receber parâmetros externos, veja a função abaixo.
 
 ![](<../.gitbook/assets/image (33).png>)
 
-Por enquanto preste atenção somente nos parâmetros dentro dos parêntesis (uinta , uint b). Esse trecho de código indica que essa função recebe dois números, um está na variável 'a' e outro está na variável 'b'.&#x20;
+Por enquanto preste atenção somente nos parâmetros dentro dos parêntesis (uint a , uint b). Esse trecho de código indica que essa função recebe dois números, um está na variável 'a' e outro está na variável 'b'.&#x20;
 
 #### Sem parâmetros
 
@@ -60,7 +60,7 @@ pure é bastante usado para fazer calculos e retornar resultados.
 
 ## Modificadores
 
-há muitos casos de uso para modificadores mas um dos mais comuns é definir permissões e restrições no contrato para que somente o administrador possa fazer algumas coisas.
+Há muitos casos de uso para modificadores mas um dos mais comuns é definir permissões e restrições no contrato para que somente o administrador possa fazer algumas coisas.
 
 ![](<../.gitbook/assets/image (115).png>)
 
@@ -72,7 +72,7 @@ Algumas funções podem receber eth e outros tokens e para isso devem levar a pa
 
 ![](<../.gitbook/assets/image (44).png>)
 
-funções com parâmetro de estado _view_ não podem ser pagáveis.
+Funções com parâmetro de estado _view_ não podem ser pagáveis.
 
 ## Return e Returns
 
