@@ -16,7 +16,7 @@ lista chamada _**saldos**_ do tipo _**uint**_ (números inteiros positivos).
 
 ## Adicionando itens à lista.
 
-Para adicionar um registro usamos o comando _push(valor\_a\_ser\_adicionado)_ e para atualizar acessamos o indice (posição da lista) em que esse vaor está armazenado. Assim como tudo na computação, listas _começam com indice 0_ então o primeiro valor estará armazenado na posição 0 e o segundo na posição 2 e assim segue.
+Para adicionar um registro usamos o comando _push(valor\_a\_ser\_adicionado)_ e para atualizar acessamos o indice (posição da lista) em que esse vaor está armazenado. Assim como tudo na computação, listas _começam com indice 0_ então o primeiro valor estará armazenado na posição 0 e o segundo na posição 1 e assim segue.
 
 ![](<../.gitbook/assets/image (51).png>)
 
