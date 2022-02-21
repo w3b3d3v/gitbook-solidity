@@ -2,7 +2,7 @@
 description: >-
   Usando funções podemos guardar novos dados na blockchain, ler dados guardados
   na blockchain ou modifica-los. Cada tipo de função irá exigir um tipo de
-  chamada diferente e consequentemente um custo diferente.
+  chamada diferente e consequentemente um custo dif
 ---
 
 # 4. Parâmetros de estado (view, pure)
@@ -17,7 +17,7 @@ Essa função será executada no modo _**transaction**_ pelo minerador então me
 
 ## View
 
-O parâmetro _**view**_ é usado para funções que não alteram dados nem o estado do contrato na blockchain. Tudo permenece igual e será somete _**ler**_ os dados_**.**_
+O parâmetro _**view**_ é usado para funções que não alteram dados nem o estado do contrato na blockchain. Tudo permenece igual e será somete _**ler**_ os dados\_**.**\_
 
 ![](<../.gitbook/assets/image (14).png>)
 
@@ -29,5 +29,4 @@ Essa função é executada pelo minerador no modo _**call**_ o que implica em **
 
 ![](<../.gitbook/assets/image (109).png>)
 
-É bastante usado para realizar cálculos que dependem da entrada de parâmetros na função e também é executada no modo _**call**_ tornando assim sua execução sem custo de gas_**.**_
-
+É bastante usado para realizar cálculos que dependem da entrada de parâmetros na função e também é executada no modo _**call**_ tornando assim sua execução sem custo de gas\_**.**\_
