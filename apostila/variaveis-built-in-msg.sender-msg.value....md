@@ -2,7 +2,15 @@
 
 ## block.chainid
 
-A rede principal da Ethereum mainnet possui um id 1 e uma das redes de teste chamada Rinkeby possui id 3. Enquanto outras redes EVM como a Binance possui id 56, você pode ver uma lista completa de Chain IDs em [https://chainlist.org/](https://chainlist.org).
+Cada rede possui um número único de identificação e através da variável 'block.chainid' é possível identificar a rede atual.
+A Ethereum mainnet, que é a principal, possui o id 1. Já a Rinkeby, uma de suas redes de teste, possui o id 3.
+
+ID de outras redes EVM:
+- Binance Smart Chain (BSC) => id 56
+- Polygon Mainnet => id 137
+- Fantom Opera => id 250
+
+Você pode ver uma lista completa de Chain IDs em [https://chainlist.org/](https://chainlist.org).
 
 ![](<../.gitbook/assets/image (99).png>)
 
@@ -26,7 +34,7 @@ Quanto mais cálculos e operações um smart contract tiver, mais gas ele irá c
 
 ## block.number
 
-Retorna o numero do bloco atual, pode ser usado pra muitas coisas e uma das mais comuns é travar dinheiro até determinado bloco.
+Retorna o número do bloco atual, pode ser usado para muitas coisas e uma das mais comuns é travar dinheiro até determinado bloco.
 
 No momento em que escrevo isso o bloco atual da rede Ethereum é [13525758](https://etherscan.io/block/13525758).
 
