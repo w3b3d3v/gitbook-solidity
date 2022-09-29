@@ -17,7 +17,7 @@ description: >-
 
 ## Uma breve introdução de como as variáveis funcionam.
 
-Os tipos de dados em solidity são explícitos, ou seja nós precisamos definir através de uma _palavra chave_ qual é o tipo da variável. No print abaixo o tipo da variável está em azul e o seu nome está em preto.
+Os tipos de dados em solidity são explícitos, ou seja nós precisamos definir através de uma _palavra chave_ qual é o tipo da variável. No print abaixo o tipo e o nome da variável estão em azul e o seu conteúdo está em amarelo.
 
 ![](<../.gitbook/assets/image (56).png>)
 
