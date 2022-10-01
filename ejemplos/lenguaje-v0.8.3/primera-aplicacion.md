@@ -1,6 +1,6 @@
-# Primeira Aplicação
+# Primera Aplicación
 
-Aqui está um exemplo simples de contrato no qual você pode obter, incrementar e decrementar um contador.
+Aquí está un ejemplo simple de contrato en el cual puedes obtener, aumentar y disminuir el valor de un contador.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -9,17 +9,17 @@ pragma solidity ^0.8.3;
 contract Counter {
     uint public count;
 
-    // Função para obter a conta atual
+    // Función que obtiene el valor actual del contador
     function get() public view returns (uint) {
         return count;
     }
 
-    // Função para incrementar 1 à conta
+    // Función que aumenta en 1 el contador
     function inc() public {
         count += 1;
     }
 
-    // Função para decrementar a conta de 1
+    // Función que disminuye en 1 el contador
     function dec() public {
         count -= 1;
     }
