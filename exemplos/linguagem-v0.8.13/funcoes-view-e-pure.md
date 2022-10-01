@@ -13,12 +13,12 @@ pragma solidity ^0.8.13;
 contract ViewAndPure {
     uint public x = 1;
 
-    // Promete que não vai ter modificação do estado.
+    // Promete não modificar o estado.
     function addToX(uint y) public view returns (uint) {
         return x + y;
     }
 
-    // Promete não vai ter modificação ou leitura de um estado.
+    // Promete não modificar ou ler o estado.
     function add(uint i, uint j) public pure returns (uint) {
         return i + j;
     }
