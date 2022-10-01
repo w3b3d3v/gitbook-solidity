@@ -1,6 +1,6 @@
-# If/Else
+# If / Else
 
-Solidity suporta estruturas condicionais `if`, `else if` and `else`.
+Solidity soporta estructuras condicionales `if`, `else if` y `else`.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -19,11 +19,12 @@ contract IfElse {
 
     function ternary(uint _x) public pure returns (uint) {
         // if (_x < 10) {
-        //     retorna 1;
+        //     return 1;
         // }
-        // retorna 2;
+        // return 2;
 
-        // forma abreviada de escrever a instrução if / else 
+        // forma abreviada de escribir la sentencia if / else
+        // el operador "?" es llamado operador ternario
         return _x < 10 ? 1 : 2;
     }
 }

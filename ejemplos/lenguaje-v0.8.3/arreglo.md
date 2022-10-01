@@ -1,38 +1,38 @@
-# Matriz
+# Arreglo
 
-Matrizes podem ter um tempo de compilação de tamanho fixo ou dinâmico.
+Un arreglo puede tener un tamaño fijo por tiempo de compilación o un tamaño dinámico.
 
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
 
 contract Array {
-    // Diversas formas de inicializar uma matriz
+    // Diversas formas de inicializar un arreglo
     uint[] public arr;
     uint[] public arr2 = [1, 2, 3];
-    // Matriz de tamanho fixo, todos elementos começam em 0
+    // Arreglo de tamaño fijo, todos los elementos inicializados en 0
     uint[10] public myFixedSizeArr;
 
     function get(uint i) public view returns (uint) {
         return arr[i];
     }
 
-    // Solidity pode retornar a matriz inteira.
-    // Mas essa função deve ser evitada por matrizes
-    // que aumentam indefinidamente em comprimento.
+    // Solidity puede devolver el array entero.
+    // Pero esa función debe ser evitada por arreglos
+    // que aumentan indefinidamente en longitud.
     function getArr() public view returns (uint[] memory) {
         return arr;
     }
 
     function push(uint i) public {
-        // Adiciona elementos à matriz
-        // Isso aumentará o comprimento da matriz de 1.
+        // Adiciona elementos al arreglo
+        // Eso aumentará la longitud del arreglo por 1.
         arr.push(i);
     }
 
     function pop() public {
-        // Remove o último elemento da matriz
-        // Isso diminuirá o comprimento da matriz de 1
+        // Remueve el último elemento del arreglo
+        // Eso disminuirá la longitud del arreglo por 1
         arr.pop();
     }
 
@@ -41,22 +41,22 @@ contract Array {
     }
 
     function remove(uint index) public {
-        // Delete não altera o comprimento da matriz.
-        // Ele reinicia o valor no índice para o valor padrão,
-        // nesse caso 0
+        // Eliminar no altera la longitud del arreglo.
+        // Reinicia el valor del índice a su valor por defecto,
+        // en este caso 0
         delete arr[index];
     }
 
     function examples() external {
-        // cria uma matriz na memória, somente as de tamanho fixo podem ser criadas
+        // crea un arreglo en la memoria, solamente los de tamaño fijo pueden ser creados
         uint[] memory a = new uint[](5);
     }
 }
 ```
 
-#### Exemplos de remoção de um elemento da matriz <a href="#examples-of-removing-array-element" id="examples-of-removing-array-element"></a>
+#### Ejemplos de remoción de un elemento del arreglo <a href="#examples-of-removing-array-element" id="examples-of-removing-array-element"></a>
 
-Remova elementos da matriz trocando elementos da direita para a esquerda.
+Remueve elementos del arreglo cambiando elementos de derecha a izquierda.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -97,7 +97,7 @@ contract ArrayRemoveByShifting {
 }
 ```
 
-Remova um elemento da matriz copiando o último elemento para o lugar a ser removido
+Remueve un elemento copiando el último elemento al lugar donde está el elemento a ser removido
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -106,13 +106,13 @@ pragma solidity ^0.8.3;
 contract ArrayReplaceFromEnd {
     uint[] public arr;
 
-    // Apagar um elemento cria um espaço na matriz.
-    // Um truque para conservar a matriz compacta é
-    // mover o último elemento para um lugar para ser apagado.
+    // Eliminar un elemento crea un espacio en el arreglo.
+    // Un truco para conservar el arreglo compacto es
+    // mover el último elemento al lugar del que será eliminado
     function remove(uint index) public {
-        // Mova o último elemento para o local onde ele será apagado.
+        // Mueva el último elemento al lugar donde está el elemento a ser removido.
         arr[index] = arr[arr.length - 1];
-        // Remova o último elemento
+        // Remueve el último elemento
         arr.pop();
     }
 
