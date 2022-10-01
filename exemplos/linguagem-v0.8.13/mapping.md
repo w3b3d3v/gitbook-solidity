@@ -1,0 +1,62 @@
+# Mapping
+
+Mapas são criados com a sintaxe `mapping(Tipo => Valor)`.
+
+`Tipo` podem ser valores como `uint`, `address` or `bytes`.
+
+`Valor` pode ser de qualquer tipo incluindo outro `mapping` ou uma `array`.
+
+Mappings não são iteráveis.
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.13;
+
+contract Mapping {
+    // Mapping de address para uint
+    mapping(address => uint) public myMap;
+
+    function get(address _addr) public view returns (uint) {
+        // Mapping sempre retorna um valor.
+        // Se o valor nunca foi definido, vai retornar o valor padrão.
+        return myMap[_addr];
+    }
+
+    function set(address _addr, uint _i) public {
+        // Atualiza o valor nesse endereço
+        myMap[_addr] = _i;
+    }
+
+    function remove(address _addr) public {
+        // Redefine o valor para o padrão.
+        delete myMap[_addr];
+    }
+}
+
+contract MappingAninhado {
+    // Mapping aninhado (mapping de address para outro mapping)
+    mapping(address => mapping(uint => bool)) public nested;
+
+    function get(address _addr1, uint _i) public view returns (bool) {
+        // Você pode obter valores de um mapping aninhado
+        // mesmo quando ele não tiver sido inicializado.
+        return nested[_addr1][_i];
+    }
+
+    function set(
+        address _addr1,
+        uint _i,
+        bool _boo
+    ) public {
+        nested[_addr1][_i] = _boo;
+    }
+
+    function remove(address _addr1, uint _i) public {
+        delete nested[_addr1][_i];
+    }
+}
+```
+
+## Experimente no Remix
+
+- [Mapping.sol](https://remix.ethereum.org/#code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IE1hcHBpbmcgewogICAgLy8gTWFwcGluZyBkZSBhZGRyZXNzIHBhcmEgdWludAogICAgbWFwcGluZyhhZGRyZXNzID0+IHVpbnQpIHB1YmxpYyBteU1hcDsKCiAgICBmdW5jdGlvbiBnZXQoYWRkcmVzcyBfYWRkcikgcHVibGljIHZpZXcgcmV0dXJucyAodWludCkgewogICAgICAgIC8vIE1hcHBpbmcgc2VtcHJlIHJldG9ybmEgdW0gdmFsb3IuCiAgICAgICAgLy8gU2UgbyB2YWxvciBudW5jYSBmb2kgZGVmaW5pZG8sIHZhaSByZXRvcm5hciBvIHZhbG9yIHBhZHJhby4KICAgICAgICByZXR1cm4gbXlNYXBbX2FkZHJdOwogICAgfQoKICAgIGZ1bmN0aW9uIHNldChhZGRyZXNzIF9hZGRyLCB1aW50IF9pKSBwdWJsaWMgewogICAgICAgIC8vIEF0dWFsaXphIG8gdmFsb3IgbmVzc2UgZW5kZXJlY28KICAgICAgICBteU1hcFtfYWRkcl0gPSBfaTsKICAgIH0KCiAgICBmdW5jdGlvbiByZW1vdmUoYWRkcmVzcyBfYWRkcikgcHVibGljIHsKICAgICAgICAvLyBSZWRlZmluZSBvIHZhbG9yIHBhcmEgbyBwYWRyYW8uCiAgICAgICAgZGVsZXRlIG15TWFwW19hZGRyXTsKICAgIH0KfQoKY29udHJhY3QgTWFwcGluZ0FuaW5oYWRvIHsKICAgIC8vIE1hcHBpbmcgYW5pbmhhZG8gKG1hcHBpbmcgZGUgYWRkcmVzcyBwYXJhIG91dHJvIG1hcHBpbmcpCiAgICBtYXBwaW5nKGFkZHJlc3MgPT4gbWFwcGluZyh1aW50ID0+IGJvb2wpKSBwdWJsaWMgbmVzdGVkOwoKICAgIGZ1bmN0aW9uIGdldChhZGRyZXNzIF9hZGRyMSwgdWludCBfaSkgcHVibGljIHZpZXcgcmV0dXJucyAoYm9vbCkgewogICAgICAgIC8vIFZvY2UgcG9kZSBvYnRlciB2YWxvcmVzIGRlIHVtIG1hcHBpbmcgYW5pbmhhZG8KICAgICAgICAvLyBtZXNtbyBxdWFuZG8gZWxlIG5hbyB0aXZlciBzaWRvIGluaWNpYWxpemFkby4KICAgICAgICByZXR1cm4gbmVzdGVkW19hZGRyMV1bX2ldOwogICAgfQoKICAgIGZ1bmN0aW9uIHNldCgKICAgICAgICBhZGRyZXNzIF9hZGRyMSwKICAgICAgICB1aW50IF9pLAogICAgICAgIGJvb2wgX2JvbwogICAgKSBwdWJsaWMgewogICAgICAgIG5lc3RlZFtfYWRkcjFdW19pXSA9IF9ib287CiAgICB9CgogICAgZnVuY3Rpb24gcmVtb3ZlKGFkZHJlc3MgX2FkZHIxLCB1aW50IF9pKSBwdWJsaWMgewogICAgICAgIGRlbGV0ZSBuZXN0ZWRbX2FkZHIxXVtfaV07CiAgICB9Cn0=)
