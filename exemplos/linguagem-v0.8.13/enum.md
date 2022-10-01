@@ -6,7 +6,7 @@ Enums podem ser declarados fora do contrato.
 
 ```solidity
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.3;
+pragma solidity ^0.8.13;
 
 contract Enum {
     // Enum representando status de envio
@@ -55,7 +55,7 @@ Arquivo no qual o enum é declarado
 
 ```solidity
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.3;
+pragma solidity ^0.8.13;
 // É salvo como 'EnumDeclaration.sol'
 
 enum Status {
@@ -71,7 +71,7 @@ Arquivo que importa o enum acima
 
 ```solidity
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.3;
+pragma solidity ^0.8.13;
 
 import "./EnumDeclaration.sol";
 
