@@ -4,7 +4,7 @@
 
 `abi.decode` decodifica `bytes` de volta em dados.
 
-```
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
 
