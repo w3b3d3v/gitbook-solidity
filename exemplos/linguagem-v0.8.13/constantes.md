@@ -15,6 +15,6 @@ contract Constantes {
 }
 ```
 
-## Experimente no Remix
+## Teste no Remix
 
 - [Constantes.sol](https://remix.ethereum.org/#code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IENvbnN0YW50cyB7CiAgICAvLyBDb252ZW5jYW8gZGUgY29kaWZpY2FjYW8gcGFyYSB2YXJpYXZlaXMgY29uc3RhbnRlcyBlbSBtYWl1c2N1bGFzCiAgICBhZGRyZXNzIHB1YmxpYyBjb25zdGFudCBNWV9BRERSRVNTID0gMHg3Nzc3ODg4ODk5OTlBYUFBYkJiYkNjY2NkZERkZWVlRWZGRmZDY0NjOwogICAgdWludCBwdWJsaWMgY29uc3RhbnQgTVlfVUlOVCA9IDEyMzsKfQ==)
