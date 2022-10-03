@@ -1,10 +1,10 @@
 # For e While Loop
 
-Solidity suporta loops `for`, `while e` `do while`.
+Solidity suporta `for`, `while` e `do while`.
 
 Não escreva loops sem limites, já que isso pode levar ao limite do gás, causando falha na transação.
 
-Pela razão acima, `while` e `do while` loops são raramente usados.
+Pela razão acima, `while` e `do while` são raramente usados.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -35,4 +35,4 @@ contract Loop {
 
 ## Teste no Remix
 
-- [Loop.sol](https://remix.ethereum.org/#code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IExvb3AgewogICAgZnVuY3Rpb24gbG9vcCgpIHB1YmxpYyB7CiAgICAgICAgLy8gZm9yIGxvb3AKICAgICAgICBmb3IgKHVpbnQgaSA9IDA7IGkgPCAxMDsgaSsrKSB7CiAgICAgICAgICAgIGlmIChpID09IDMpIHsKICAgICAgICAgICAgICAgIC8vIFB1bGUgcGFyYSBhIHByb3hpbWEgaXRlcmFjYW8gY29tIGNvbnRpbnVlCiAgICAgICAgICAgICAgICBjb250aW51ZTsKICAgICAgICAgICAgfQogICAgICAgICAgICBpZiAoaSA9PSA1KSB7CiAgICAgICAgICAgICAgICAvLyBTYWlhIGRvIGxvb3AgY29tIGJyZWFrCiAgICAgICAgICAgICAgICBicmVhazsKICAgICAgICAgICAgfQogICAgICAgIH0KCiAgICAgICAgLy8gd2hpbGUgbG9vcAogICAgICAgIHVpbnQgajsKICAgICAgICB3aGlsZSAoaiA8IDEwKSB7CiAgICAgICAgICAgIGorKzsKICAgICAgICB9CiAgICB9Cn0)
+- [Loop.sol](https://remix.ethereum.org/#code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IExvb3AgewogICAgZnVuY3Rpb24gbG9vcCgpIHB1YmxpYyB7CiAgICAgICAgLy8gZm9yIGxvb3AKICAgICAgICBmb3IgKHVpbnQgaSA9IDA7IGkgPCAxMDsgaSsrKSB7CiAgICAgICAgICAgIGlmIChpID09IDMpIHsKICAgICAgICAgICAgICAgIC8vIFB1bGUgcGFyYSBhIHByb3hpbWEgaXRlcmFjYW8gY29tIGNvbnRpbnVlCiAgICAgICAgICAgICAgICBjb250aW51ZTsKICAgICAgICAgICAgfQogICAgICAgICAgICBpZiAoaSA9PSA1KSB7CiAgICAgICAgICAgICAgICAvLyBTYWlhIGRvIGxvb3AgY29tIGJyZWFrCiAgICAgICAgICAgICAgICBicmVhazsKICAgICAgICAgICAgfQogICAgICAgIH0KCiAgICAgICAgLy8gd2hpbGUgbG9vcAogICAgICAgIHVpbnQgajsKICAgICAgICB3aGlsZSAoaiA8IDEwKSB7CiAgICAgICAgICAgIGorKzsKICAgICAgICB9CiAgICB9Cn0=)

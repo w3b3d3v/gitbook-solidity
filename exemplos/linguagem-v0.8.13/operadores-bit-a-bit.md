@@ -137,7 +137,6 @@ contract BitwiseOps {
         if (x >= 0x2) r += 1;
     }
 }
-
 ```
 
 ## Teste no Remix

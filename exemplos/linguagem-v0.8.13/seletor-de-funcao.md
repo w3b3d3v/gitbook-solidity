@@ -2,7 +2,7 @@
 
 Quando uma função é chamada, os 4 primeiros bytes da `calldata` especifica qual função chamar.
 
-Esses 4 bytes são chamados seletor de função.
+Esses 4 bytes são chamados de seletor de função.
 
 Pegue como exemplo, este código abaixo. Ele usa `call` para executar `transfer` num contrato de endereço `addr`.
 
@@ -35,4 +35,4 @@ contract SeletorDeFuncao {
 
 ## Teste no Remix
 
-- [SeletorDeFuncao.sol](https://remix.ethereum.org/#code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IFNlbGV0b3JEZUZ1bmNhbyB7CiAgICAvKgogICAgInRyYW5zZmVyKGFkZHJlc3MsdWludDI1NikiCiAgICAweGE5MDU5Y2JiCiAgICAidHJhbnNmZXJGcm9tKGFkZHJlc3MsYWRkcmVzcyx1aW50MjU2KSIKICAgIDB4MjNiODcyZGQKICAgICovCiAgICBmdW5jdGlvbiBnZXRTZWxlY3RvcihzdHJpbmcgY2FsbGRhdGEgX2Z1bmMpIGV4dGVybmFsIHB1cmUgcmV0dXJucyAoYnl0ZXM0KSB7CiAgICAgICAgcmV0dXJuIGJ5dGVzNChrZWNjYWsyNTYoYnl0ZXMoX2Z1bmMpKSk7CiAgICB9Cn0)
+- [SeletorDeFuncao.sol](https://remix.ethereum.org/#code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IFNlbGV0b3JEZUZ1bmNhbyB7CiAgICAvKgogICAgInRyYW5zZmVyKGFkZHJlc3MsdWludDI1NikiCiAgICAweGE5MDU5Y2JiCiAgICAidHJhbnNmZXJGcm9tKGFkZHJlc3MsYWRkcmVzcyx1aW50MjU2KSIKICAgIDB4MjNiODcyZGQKICAgICovCiAgICBmdW5jdGlvbiBnZXRTZWxlY3RvcihzdHJpbmcgY2FsbGRhdGEgX2Z1bmMpIGV4dGVybmFsIHB1cmUgcmV0dXJucyAoYnl0ZXM0KSB7CiAgICAgICAgcmV0dXJuIGJ5dGVzNChrZWNjYWsyNTYoYnl0ZXMoX2Z1bmMpKSk7CiAgICB9Cn0=)

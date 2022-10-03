@@ -2,7 +2,7 @@
 
 Um erro desfaz todas as alterações feitas no estado durante uma transação.
 
-Você pode lançar um erro chamando `require`, `revert` or `assert`.
+Você pode lançar um erro chamando `require`, `revert` ou `assert`.
 
 - `require` é usado para validar entradas e condições antes da execução.
 - `revert` é semelhante a `require`. Veja o código abaixo para detalhes.
@@ -43,12 +43,12 @@ contract Erro {
     }
 
     // erro personalizado
-    error InsufficientBalance(uint saldo, uint withdrawAmount);
+    error InsufficientBalance(uint saldo, uint retirarQuantidade);
 
-    function testCustomError(uint _withdrawAmount) public view {
-        uint bal = address(this).saldo;
-        if (bal < _withdrawAmount) {
-            revert InsufficientBalance({saldo: bal, withdrawAmount: _withdrawAmount});
+    function testCustomError(uint _retirarQuantidade) public view {
+        uint bal = address(this).balance;
+        if (bal < _retirarQuantidade) {
+            revert InsufficientBalance({saldo: bal, retirarQuantidade: _retirarQuantidade});
         }
     }
 }
@@ -65,19 +65,19 @@ contract Conta {
     uint public constant MAX_UINT = 2**256 - 1;
 
     function deposit(uint _quantidade) public {
-        uint oldBalance = saldo;
-        uint newBalance = saldo + _quantidade;
+        uint saldoAntigo = saldo;
+        uint saldoNovo = saldo + _quantidade;
 
         // saldo + _quantidade não entra em condição de overflow se saldo + _quantidade >= saldo
-        require(newBalance >= oldBalance, "Overflow");
+        require(saldoNovo >= saldoAntigo, "Overflow");
 
-        saldo = newBalance;
+        saldo = saldoNovo;
 
-        assert(saldo >= oldBalance);
+        assert(saldo >= saldoAntigo);
     }
 
     function withdraw(uint _quantidade) public {
-        uint oldBalance = saldo;
+        uint saldoAntigo = saldo;
 
         // saldo - _quantidade não entra em condição de underflow se saldo >= _quantidade
         require(saldo >= _quantidade, "Underflow");
@@ -88,13 +88,13 @@ contract Conta {
 
         saldo -= _quantidade;
 
-        assert(saldo <= oldBalance);
+        assert(saldo <= saldoAntigo);
     }
 }
 ```
 
 ## Teste no Remix
 
-[Erro.sol](https://remix.ethereum.org/#code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IEVycm8gewogICAgZnVuY3Rpb24gdGVzdFJlcXVpcmUodWludCBfaSkgcHVibGljIHB1cmUgewogICAgICAgIC8vIFJlcXVpcmUgZGV2ZSBzZXIgdXNhZG8gcGFyYSB2YWxpZGFyIGNvbmRpY29lcyBjb21vOgogICAgICAgIC8vIC0gZW50cmFkYXMKICAgICAgICAvLyAtIGNvbmRpY29lcyBhbnRlcmlvcmVzIGEgZXhlY3VjYW8KICAgICAgICAvLyAtIHJldG9ybmFyIHZhbG9yZXMgZGUgY2hhbWFkYXMgcGFyYSBvdXRyYXMgZnVuY29lcwogICAgICAgIHJlcXVpcmUoX2kgPiAxMCwgXCJBIGVudHJhZGEgZGV2ZSBzZXIgbWFpb3IgcXVlIDEwXCIpOwogICAgfQoKICAgIGZ1bmN0aW9uIHRlc3RSZXZlcnQodWludCBfaSkgcHVibGljIHB1cmUgewogICAgICAgIC8vIFJldmVydCBlIHV0aWwgcXVhbmRvIGEgY29uZGljYW8gYSBzZXIgdmVyaWZpY2FkYSBlIGNvbXBsZXhhLgogICAgICAgIC8vIEVzc2UgY29kaWdvIGZheiBleGF0YW1lbnRlIGEgbWVzbWEgY29pc2EgcXVlIG8gZXhlbXBsbyBhY2ltYQogICAgICAgIGlmIChfaSA8PSAxMCkgewogICAgICAgICAgICByZXZlcnQoXCJBIGVudHJhZGEgZGV2ZSBzZXIgbWFpb3IgcXVlIDEwXCIpOwogICAgICAgIH0KICAgIH0KCiAgICB1aW50IHB1YmxpYyBudW07CgogICAgZnVuY3Rpb24gdGVzdEFzc2VydCgpIHB1YmxpYyB2aWV3IHsKICAgICAgICAvLyBBc3NlcnQgc29tZW50ZSBkZXZlIHNlciB1c2FkYSBwYXJhIHRlc3RhciBlcnJvcyBpbnRlcm5vcywKICAgICAgICAvLyBlIHBhcmEgY2hlY2FyIGludmFyaWFudGVzLgoKICAgICAgICAvLyBBcXVpIG5vcyBhZmlybWFtb3MgcXVlIG51bSBlIHNlbXByZSBpZ3VhbCBhIDAKICAgICAgICAvLyBqYSBxdWUgZSBpbXBvc3NpdmVsIGF0dWFsaXphciBvIHZhbG9yIGRlIG51bQogICAgICAgIGFzc2VydChudW0gPT0gMCk7CiAgICB9CgogICAgLy8gZXJybyBwZXJzb25hbGl6YWRvCiAgICBlcnJvciBJbnN1ZmZpY2llbnRCYWxhbmNlKHVpbnQgc2FsZG8sIHVpbnQgd2l0aGRyYXdBbW91bnQpOwoKICAgIGZ1bmN0aW9uIHRlc3RDdXN0b21FcnJvcih1aW50IF93aXRoZHJhd0Ftb3VudCkgcHVibGljIHZpZXcgewogICAgICAgIHVpbnQgYmFsID0gYWRkcmVzcyh0aGlzKS5zYWxkbzsKICAgICAgICBpZiAoYmFsIDwgX3dpdGhkcmF3QW1vdW50KSB7CiAgICAgICAgICAgIHJldmVydCBJbnN1ZmZpY2llbnRCYWxhbmNlKHtzYWxkbzogYmFsLCB3aXRoZHJhd0Ftb3VudDogX3dpdGhkcmF3QW1vdW50fSk7CiAgICAgICAgfQogICAgfQp9)
+[Erro.sol](https://remix.ethereum.org/#code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IEVycm8gewogICAgZnVuY3Rpb24gdGVzdFJlcXVpcmUodWludCBfaSkgcHVibGljIHB1cmUgewogICAgICAgIC8vIFJlcXVpcmUgZGV2ZSBzZXIgdXNhZG8gcGFyYSB2YWxpZGFyIGNvbmRpY29lcyBjb21vOgogICAgICAgIC8vIC0gZW50cmFkYXMKICAgICAgICAvLyAtIGNvbmRpY29lcyBhbnRlcmlvcmVzIGEgZXhlY3VjYW8KICAgICAgICAvLyAtIHJldG9ybmFyIHZhbG9yZXMgZGUgY2hhbWFkYXMgcGFyYSBvdXRyYXMgZnVuY29lcwogICAgICAgIHJlcXVpcmUoX2kgPiAxMCwgIkEgZW50cmFkYSBkZXZlIHNlciBtYWlvciBxdWUgMTAiKTsKICAgIH0KCiAgICBmdW5jdGlvbiB0ZXN0UmV2ZXJ0KHVpbnQgX2kpIHB1YmxpYyBwdXJlIHsKICAgICAgICAvLyBSZXZlcnQgZSB1dGlsIHF1YW5kbyBhIGNvbmRpY2FvIGEgc2VyIHZlcmlmaWNhZGEgZSBjb21wbGV4YS4KICAgICAgICAvLyBFc3NlIGNvZGlnbyBmYXogZXhhdGFtZW50ZSBhIG1lc21hIGNvaXNhIHF1ZSBvIGV4ZW1wbG8gYWNpbWEKICAgICAgICBpZiAoX2kgPD0gMTApIHsKICAgICAgICAgICAgcmV2ZXJ0KCJBIGVudHJhZGEgZGV2ZSBzZXIgbWFpb3IgcXVlIDEwIik7CiAgICAgICAgfQogICAgfQoKICAgIHVpbnQgcHVibGljIG51bTsKCiAgICBmdW5jdGlvbiB0ZXN0QXNzZXJ0KCkgcHVibGljIHZpZXcgewogICAgICAgIC8vIEFzc2VydCBzb21lbnRlIGRldmUgc2VyIHVzYWRhIHBhcmEgdGVzdGFyIGVycm9zIGludGVybm9zLAogICAgICAgIC8vIGUgcGFyYSBjaGVjYXIgaW52YXJpYW50ZXMuCgogICAgICAgIC8vIEFxdWkgbm9zIGFmaXJtYW1vcyBxdWUgbnVtIGUgc2VtcHJlIGlndWFsIGEgMAogICAgICAgIC8vIGphIHF1ZSBlIGltcG9zc2l2ZWwgYXR1YWxpemFyIG8gdmFsb3IgZGUgbnVtCiAgICAgICAgYXNzZXJ0KG51bSA9PSAwKTsKICAgIH0KCiAgICAvLyBlcnJvIHBlcnNvbmFsaXphZG8KICAgIGVycm9yIEluc3VmZmljaWVudEJhbGFuY2UodWludCBzYWxkbywgdWludCByZXRpcmFyUXVhbnRpZGFkZSk7CgogICAgZnVuY3Rpb24gdGVzdEN1c3RvbUVycm9yKHVpbnQgX3JldGlyYXJRdWFudGlkYWRlKSBwdWJsaWMgdmlldyB7CiAgICAgICAgdWludCBiYWwgPSBhZGRyZXNzKHRoaXMpLmJhbGFuY2U7CiAgICAgICAgaWYgKGJhbCA8IF9yZXRpcmFyUXVhbnRpZGFkZSkgewogICAgICAgICAgICByZXZlcnQgSW5zdWZmaWNpZW50QmFsYW5jZSh7c2FsZG86IGJhbCwgcmV0aXJhclF1YW50aWRhZGU6IF9yZXRpcmFyUXVhbnRpZGFkZX0pOwogICAgICAgIH0KICAgIH0KfQ==)
 
-[Conta.sol](https://remix.ethereum.org/#code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IENvbnRhIHsKICAgIHVpbnQgcHVibGljIHNhbGRvOwogICAgdWludCBwdWJsaWMgY29uc3RhbnQgTUFYX1VJTlQgPSAyKioyNTYgLSAxOwoKICAgIGZ1bmN0aW9uIGRlcG9zaXQodWludCBfcXVhbnRpZGFkZSkgcHVibGljIHsKICAgICAgICB1aW50IG9sZEJhbGFuY2UgPSBzYWxkbzsKICAgICAgICB1aW50IG5ld0JhbGFuY2UgPSBzYWxkbyArIF9xdWFudGlkYWRlOwoKICAgICAgICAvLyBzYWxkbyArIF9xdWFudGlkYWRlIG5hbyBlbnRyYSBlbSBjb25kaWNhbyBkZSBvdmVyZmxvdyBzZSBzYWxkbyArIF9xdWFudGlkYWRlID49IHNhbGRvCiAgICAgICAgcmVxdWlyZShuZXdCYWxhbmNlID49IG9sZEJhbGFuY2UsIFwiT3ZlcmZsb3dcIik7CgogICAgICAgIHNhbGRvID0gbmV3QmFsYW5jZTsKCiAgICAgICAgYXNzZXJ0KHNhbGRvID49IG9sZEJhbGFuY2UpOwogICAgfQoKICAgIGZ1bmN0aW9uIHdpdGhkcmF3KHVpbnQgX3F1YW50aWRhZGUpIHB1YmxpYyB7CiAgICAgICAgdWludCBvbGRCYWxhbmNlID0gc2FsZG87CgogICAgICAgIC8vIHNhbGRvIC0gX3F1YW50aWRhZGUgbmFvIGVudHJhIGVtIGNvbmRpY2FvIGRlIHVuZGVyZmxvdyBzZSBzYWxkbyA+PSBfcXVhbnRpZGFkZQogICAgICAgIHJlcXVpcmUoc2FsZG8gPj0gX3F1YW50aWRhZGUsIFwiVW5kZXJmbG93XCIpOwoKICAgICAgICBpZiAoc2FsZG8gPCBfcXVhbnRpZGFkZSkgewogICAgICAgICAgICByZXZlcnQoXCJVbmRlcmZsb3dcIik7CiAgICAgICAgfQoKICAgICAgICBzYWxkbyAtPSBfcXVhbnRpZGFkZTsKCiAgICAgICAgYXNzZXJ0KHNhbGRvIDw9IG9sZEJhbGFuY2UpOwogICAgfQp9)
+[Conta.sol](https://remix.ethereum.org/#code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IENvbnRhIHsKICAgIHVpbnQgcHVibGljIHNhbGRvOwogICAgdWludCBwdWJsaWMgY29uc3RhbnQgTUFYX1VJTlQgPSAyKioyNTYgLSAxOwoKICAgIGZ1bmN0aW9uIGRlcG9zaXQodWludCBfcXVhbnRpZGFkZSkgcHVibGljIHsKICAgICAgICB1aW50IHNhbGRvQW50aWdvID0gc2FsZG87CiAgICAgICAgdWludCBzYWxkb05vdm8gPSBzYWxkbyArIF9xdWFudGlkYWRlOwoKICAgICAgICAvLyBzYWxkbyArIF9xdWFudGlkYWRlIG5hbyBlbnRyYSBlbSBjb25kaWNhbyBkZSBvdmVyZmxvdyBzZSBzYWxkbyArIF9xdWFudGlkYWRlID49IHNhbGRvCiAgICAgICAgcmVxdWlyZShzYWxkb05vdm8gPj0gc2FsZG9BbnRpZ28sICJPdmVyZmxvdyIpOwoKICAgICAgICBzYWxkbyA9IHNhbGRvTm92bzsKCiAgICAgICAgYXNzZXJ0KHNhbGRvID49IHNhbGRvQW50aWdvKTsKICAgIH0KCiAgICBmdW5jdGlvbiB3aXRoZHJhdyh1aW50IF9xdWFudGlkYWRlKSBwdWJsaWMgewogICAgICAgIHVpbnQgc2FsZG9BbnRpZ28gPSBzYWxkbzsKCiAgICAgICAgLy8gc2FsZG8gLSBfcXVhbnRpZGFkZSBuYW8gZW50cmEgZW0gY29uZGljYW8gZGUgdW5kZXJmbG93IHNlIHNhbGRvID49IF9xdWFudGlkYWRlCiAgICAgICAgcmVxdWlyZShzYWxkbyA+PSBfcXVhbnRpZGFkZSwgIlVuZGVyZmxvdyIpOwoKICAgICAgICBpZiAoc2FsZG8gPCBfcXVhbnRpZGFkZSkgewogICAgICAgICAgICByZXZlcnQoIlVuZGVyZmxvdyIpOwogICAgICAgIH0KCiAgICAgICAgc2FsZG8gLT0gX3F1YW50aWRhZGU7CgogICAgICAgIGFzc2VydChzYWxkbyA8PSBzYWxkb0FudGlnbyk7CiAgICB9Cn0=)
