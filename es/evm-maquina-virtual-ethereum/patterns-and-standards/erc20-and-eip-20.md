@@ -63,7 +63,7 @@ function allowance(address _owner, address _spender) public view returns (uint25
 function name() public view returns (string)
 ```
 
-#### symbol: Retorna el simbolo del Token.
+#### symbol: Retorna el símbolo del Token.
 
 ```
 function symbol() public view returns (string)
