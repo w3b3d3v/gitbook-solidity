@@ -52,7 +52,7 @@
   * [Ubicaciones de Datos - Almacenamiento, Memoria y Calldata](exemplos/linguagem-v0.8.3/localizacoes-de-dados-armazenamento-memoria-e-calldata.md)
   * [Función](exemplos/linguagem-v0.8.3/funcao.md)
   * [Funciones View y Pure](exemplos/linguagem-v0.8.3/funcoes-view-e-pure.md)
-  * [ErroR](exemplos/linguagem-v0.8.3/erro.md)
+  * [Error](exemplos/linguagem-v0.8.3/erro.md)
   * [Modificador de Función](exemplos/linguagem-v0.8.3/modificador-de-funcao.md)
   * [Eventos](exemplos/linguagem-v0.8.3/eventos.md)
   * [Constructor](exemplos/linguagem-v0.8.3/constructor.md)
