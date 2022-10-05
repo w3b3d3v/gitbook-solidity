@@ -17,7 +17,7 @@ Essa função será executada no modo _**transaction**_ pelo minerador então me
 
 ## View
 
-O parâmetro _**view**_ é usado para funções que não alteram dados nem o estado do contrato na blockchain. Tudo permenece igual e será somete _**ler**_ os dados\_**.**\_
+O parâmetro _**view**_ é usado para funções que não alteram dados nem o estado do contrato na blockchain. Tudo permenece igual somente _**lê**_ os dados\_**.**\_
 
 ![](<../.gitbook/assets/image (14).png>)
 
