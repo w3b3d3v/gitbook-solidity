@@ -145,24 +145,35 @@ module.exports = [
   {
     title: "EVM Máquina Virtual Ethereum",
     path: "/evm-maquina-virtual-ethereum/",
-    collapsable: false,
-    children: ["/pt/guides/voting-appchain"],
+    children: [
+      "/evm-maquina-virtual-ethereum/accounts.md",
+      "/evm-maquina-virtual-ethereum/transactions.md",
+      "/evm-maquina-virtual-ethereum/gas-taxas.md",
+      "/evm-maquina-virtual-ethereum/op_codes.md",
+      "/evm-maquina-virtual-ethereum/bytecodes.md",
+      {
+        title: "Patterns and Standards",
+        path: "/evm-maquina-virtual-ethereum/patterns-and-standards",
+        children: [
+          "erc20-and-eip-20.md"
+        ]
+      }
+  
+  ],
   },
   {
     title: "Segurança",
-    path: "/pt/maintain/delegator-delegate",
-    collapsable: false,
-    children: ["/pt/maintain/delegator-delegate", "/pt/maintain/delegator-operations"],
-  },
-  {
-    title: "Guia de Validadores",
-    path: "/pt/maintain/validator-guide",
-    collapsable: false,
+    path: "/seguranca/",
     children: [
-      "/pt/maintain/validator-generate-keys",
-      "/pt/maintain/validator-deploy",
-      "/pt/maintain/validator-register",
-      "/pt/maintain/monitor-node",
+        {
+          title: "Vulnerabilidades Conhecidas",
+          path: "/seguranca/vulnerabilidades-conhecidas/",
+          children:[
+            "/seguranca/vulnerabilidades-conhecidas/funcao-de-re-entrada-reetrancy.md",
+            "/seguranca/vulnerabilidades-conhecidas/overflow-e-underflow-aritmetico.md"
+          ]
+        },
     ],
   },
+ 
 ]
