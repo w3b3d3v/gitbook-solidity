@@ -154,26 +154,22 @@ module.exports = [
       {
         title: "Patterns and Standards",
         path: "/evm-maquina-virtual-ethereum/patterns-and-standards",
-        children: [
-          "erc20-and-eip-20.md"
-        ]
-      }
-  
-  ],
+        children: ["/es/evm-maquina-virtual-ethereum/patterns-and-standards/erc20-and-eip-20.md"],
+      },
+    ],
   },
   {
     title: "Segurança",
     path: "/seguranca/",
     children: [
-        {
-          title: "Vulnerabilidades Conhecidas",
-          path: "/seguranca/vulnerabilidades-conhecidas/",
-          children:[
-            "/seguranca/vulnerabilidades-conhecidas/funcao-de-re-entrada-reetrancy.md",
-            "/seguranca/vulnerabilidades-conhecidas/overflow-e-underflow-aritmetico.md"
-          ]
-        },
+      {
+        title: "Vulnerabilidades Conhecidas",
+        path: "/seguranca/vulnerabilidades-conhecidas/",
+        children: [
+          "/seguranca/vulnerabilidades-conhecidas/funcao-de-re-entrada-reetrancy.md",
+          "/seguranca/vulnerabilidades-conhecidas/overflow-e-underflow-aritmetico.md",
+        ],
+      },
     ],
   },
- 
 ]
