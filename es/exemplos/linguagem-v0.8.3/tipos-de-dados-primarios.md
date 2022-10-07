@@ -1,6 +1,6 @@
-# Tipos de Dados Primários
+# Tipos de Datos Primarios
 
-Aqui são apresentados alguns tipos de dados primários disponíveis no Solidity.
+Aquí son presentados algunos tipos de datos primarios disponibles en Solidity.
 
 * `boolean`
 * `uint`
@@ -15,37 +15,36 @@ contract Primitives {
     bool public boo = true;
 
     /*
-    uint representa um número inteiro sem sinal, significando que  
-    números inteiros não negativos diferentes estão disponíveis
-        uint8   varia de 0 a 2 ** 8 - 1
-        uint16  varia de 0 a 2 ** 16 - 1
+    uint representa un número entero sin signo, es decir números no negativos
+    diferentes tamaños están disponibles
+        uint8   varia desde 0 hasta 2 ** 8 - 1
+        uint16  varia desde 0 hasta 2 ** 16 - 1
         ...
-        uint256 varia de 0 a 2 ** 256 - 1
+        uint256 varia desde 0 hasta 2 ** 256 - 1
     */
     uint8 public u8 = 1;
     uint public u256 = 456;
-    uint public u = 123; // uint é um apelido para uint256
+    uint public u = 123; // uint es un alias para uint256
 
     /*
-    Números negativos são permitidos para dados do tipo int.
-    Assim como no uint, intervalos diferentes estão disponíveis de 
-    int8 a int256
+    Números negativos son permitidos para datos del tipo int.
+    Como en uint, diferentes intervalos están disponibles desde int8 hasta int256
     
-    int256 varia de -2 ** 255 a 2 ** 255 - 1
-    int128 varia de -2 ** 127 a 2 ** 127 - 1
+    int256 varia desde -2 ** 255 hasta 2 ** 255 - 1
+    int128 varia desde -2 ** 127 hasta 2 ** 127 - 1
     */
     int8 public i8 = -1;
     int public i256 = 456;
-    int public i = -123; // int é o mesmo que int256
+    int public i = -123; // int es lo mismo que int256
 
-    // mínimo e máximo de int
+    // mínimo y máximo de int
     int public minInt = type(int).min;
     int public maxInt = type(int).max;
 
     address public addr = 0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c;
 
-    // Valores padrão
-    // Variáveis sem sinal possuem um valor padrão
+    // Valores por defecto
+    // Variables sin una asignación inicial poseen un valor por defecto
     bool public defaultBoo; // false
     uint public defaultUint; // 0
     int public defaultInt; // 0

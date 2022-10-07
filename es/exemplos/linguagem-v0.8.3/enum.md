@@ -1,15 +1,15 @@
 # Enum
 
-Solidity suporta enumeráveis e eles são úteis para escolha do modelo e  mantêm o controle do estado.
+Solidity soporta enumerables, estos son útiles para modelos con opciones y mantiene un seguimiento del estado.
 
-Enums podem ser declarados fora do contrato.
+Enums pueden ser declarados afuera del contrato.
 
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
 
 contract Enum {
-    // Enum representando status de envio
+    // Enum representando el status de envío
     enum Status {
         Pending,
         Shipped,
@@ -18,31 +18,31 @@ contract Enum {
         Canceled
     }
 
-    // Valor padrão é o primeiro elemento listado na 
-    // definição do tipo, nesse caso "Pendente"
+    // El valor por defecto es el primer elemento listado en
+    // la definición del tipo, en este caso "Pending"
     Status public status;
 
-    // Retorna uint
-    // Pendente  - 0
-    // Enviado  - 1
-    // Aceito - 2
-    // Recusado - 3
-    // Cancelado - 4
+    // Devuelve uint
+    // Pending  - 0
+    // Shipped  - 1
+    // Accepted - 2
+    // Rejected - 3
+    // Canceled - 4
     function get() public view returns (Status) {
         return status;
     }
 
-    // Atualiza status passando uint para input
+    // Actualiza el status pasando uint como entrada
     function set(Status _status) public {
         status = _status;
     }
 
-    // Você pode atualizar para um enum específico como este
+    // Puede actualizar a un enum específico así
     function cancel() public {
         status = Status.Canceled;
     }
 
-    // delete reinicia o enum para seu primeiro valor, 0
+    // delete reinicia el enum a su primer valor, 0
     function reset() public {
         delete status;
     }
@@ -51,12 +51,12 @@ contract Enum {
 
 #### Declarando e Importando Enum <a href="#declaring-and-importing-enum" id="declaring-and-importing-enum"></a>
 
-Arquivo no qual o enum é declarado
+Archivo donde el enum está declarado
 
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
-// É salvo como 'EnumDeclaration.sol'
+// Está guardado como 'EnumDeclaration.sol'
 
 enum Status {
     Pending,
@@ -67,7 +67,7 @@ enum Status {
 }
 ```
 
-Arquivo que importa o enum acima
+Archivo que importa el enum de arriba
 
 ```solidity
 // SPDX-License-Identifier: MIT

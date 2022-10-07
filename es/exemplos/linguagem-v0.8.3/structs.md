@@ -1,10 +1,10 @@
 # Structs
 
-Você pode definir seu próprio tipo de dado criando uma `struct`.
+Puedes definir tu propio tipo de dato creando un `struct`.
 
-Elas são úteis para agrupar dados do mesmo tipo.
+Estos son útiles para agrupar datos que se relacionan.
 
-Structs podem ser declaradas fora do contrato e importadas para outro contrato.
+Structs pueden ser declarados fuera del contrato e importados en otro contrato.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -16,18 +16,18 @@ contract Todos {
         bool completed;
     }
 
-    // Uma matriz de 'Todo' structs
+    // Un arreglo de 'Todo' structs
     Todo[] public todos;
 
     function create(string memory _text) public {
-        // 3 formas de inicializar uma struct
-        // - chamando como uma função
+        // 3 formas de inicializar un struct
+        // - invocándolo como una función
         todos.push(Todo(_text, false));
 
-        // mapeamento do valor principal
+        // - asignación llave, valor
         todos.push(Todo({text: _text, completed: false}));
 
-        // inicializa uma struct vazia e depois atualiza
+        // - inicializa un struct vacío y después lo actualiza
         Todo memory todo;
         todo.text = _text;
         // todo.completed initialized to false
@@ -35,30 +35,31 @@ contract Todos {
         todos.push(todo);
     }
 
-    // Solidity automaticamente criou um getter para 'todos' então
-    // você não precisa realmente dessa função.
+    // Solidity automáticamente creó un getter para 'todos' por lo cual
+    // realmente no se necesita esta función.
     function get(uint _index) public view returns (string memory text, bool completed) {
         Todo storage todo = todos[_index];
         return (todo.text, todo.completed);
     }
 
-    // atualiza texto
+    // actualiza 'text'
     function update(uint _index, string memory _text) public {
         Todo storage todo = todos[_index];
         todo.text = _text;
     }
 
-    // atualização concluída
+    // actualiza 'completed'
     function toggleCompleted(uint _index) public {
         Todo storage todo = todos[_index];
         todo.completed = !todo.completed;
     }
+    
 }
 ```
 
 #### Declarando e Importando Struct <a href="#declaring-and-importing-struct" id="declaring-and-importing-struct"></a>
 
-Arquivo no qual a struct é declarada
+Archivo en el cual un struct es declarado
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -70,7 +71,7 @@ struct Todo {
 }
 ```
 
-Arquivo que importa a struct acima
+Archivo que importa el struct de arriba
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -79,7 +80,7 @@ pragma solidity ^0.8.3;
 import "./StructDeclaration.sol";
 
 contract Todos {
-    // Uma matriz de structs 'Todo' 
+    // Un arreglo de structs 'Todo'
     Todo[] public todos;
 }
 ```

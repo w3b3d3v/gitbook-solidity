@@ -1,32 +1,31 @@
-# Variáveis
+# Variables
 
-Existem 3 tipos de variáveis no Solidity
+Existen 3 tipos de variables en Solidity
 
 * **local**
-  * declarada dentro de uma função
-  * não armazenada no blockchain
+  * declarada dentro de una función
+  * no se almacena en el blockchain
 * **de estado**
-  * declarada fora de uma função
-  * armazenada no blockchain
-* **global** (fornece informação sobre o blockchain)
+  * declarada afuera de una función
+  * se almacena en el blockchain
+* **global** (proporciona información sobre el blockchain)
 
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
 
 contract Variables {
-    // Variáveis de estado são armazenadas no blockchain.
-    string public text = "Hello";
-    uint public num = 123;
+  // Variables de estado son almacenadas en el blockchain.
+  string public text = "Hello";
+  uint public num = 123;
 
-    function doSomething() public {
-        // Variáveis locais não ficam salvas para o blockchain.
-        uint i = 456;
+  function doSomething() public {
+    // Variables locales no quedan guardadas en el blockchain.
+    uint i = 456;
 
-        // Aqui estão algumas variáveis globais
-        uint timestamp = block.timestamp; // Registro da hora do
-             bloco atual
-        address sender = msg.sender; // endereço do remetente
-    }
+    // Aquí están algunas variables globales
+    uint timestamp = block.timestamp; // Marca de tiempo del bloque actual
+    address sender = msg.sender; // Dirección del remitente
+  }
 }
 ```

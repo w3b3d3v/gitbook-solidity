@@ -1,10 +1,10 @@
-# For e While Loop
+# For y While Loop
 
-Solidity suporta `for`, `while e` `do while` loops.
+Solidity soporta `for`, `while` y `do while` loops.
 
-Não escreva loops sem limites, já que isso pode levar ao limite do gás, causando falha na transação.
+No escriba loops sin límites, ya que eso puede llevar al límite de gas, causando que la transacción falle.
 
-Pela razão acima, `while` e `do while` loops são raramente usados.
+Por la razón mencionada previamente, `while` y `do while` loops son raramente usados.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -15,11 +15,11 @@ contract Loop {
         // for loop
         for (uint i = 0; i < 10; i++) {
             if (i == 3) {
-                // Pule para a próxima iteração com continue
+                // Salta a la siguiente iteración con continue
                 continue;
             }
             if (i == 5) {
-                // Saia do loop com break
+                // Sale del loop con break
                 break;
             }
         }

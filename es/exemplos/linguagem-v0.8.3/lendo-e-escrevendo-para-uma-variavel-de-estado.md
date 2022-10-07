@@ -1,23 +1,23 @@
-# Lendo e Escrevendo para uma Variável de Estado
+# Leyendo y escribiendo Variables de Estado
 
-Para escrever ou atualizar uma variável de estado é necessário enviar uma transação.
+Para escribir o actualizar una variable de estado necesitas enviar una transacción.
 
-Por outro lado, podem-se ler variáveis de estado, gratuitamente, sem nenhuma taxa de transação.
+Por otro lado, puedes leer las variables de estado, gratuitamente, sin ninguna tasa de transacción.
 
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
 
 contract SimpleStorage {
-    // Variável de estado para armazenar um número
+    // Variable de estado que almacena un número
     uint public num;
 
-    // É necessário enviar uma transação para escrever para uma variável de estado.
+    // Necesitas enviar una transacción para escribir en una variable de estado.
     function set(uint _num) public {
         num = _num;
     }
 
-    // Você pode ler de uma váriável de estado sem enviar uma transação.
+    // Puedes leer una variable de estado sin enviar una transacción.
     function get() public view returns (uint) {
         return num;
     }
