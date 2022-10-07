@@ -49,7 +49,7 @@ Listas e Dicionários tem um valor padrão caso tentemos acessar uma chave ou po
 
 ### Dicionário de dicionários.
 
-É possível armazenar outros dicionários dentro de um dicionário. Imagine que você constrói um contrato em que é possível que outras pessoar guardem dinheiro e disponibilizem para outras pessoas além delas mesmas. Essa situação é representada no nosso exemplo abaixo onde temos um dicionario de endereços (chaves) principais (que guardam dinheiro no contrato) e os valores dentro desses endereços há outra lista de endereços que são chaves e dentro dessas chaves há valores bool, que podem ser positivo ou negativo.
+É possível armazenar outros dicionários dentro de um dicionário. Imagine que você constrói um contrato em que é possível que outras pessoas guardem dinheiro e disponibilizem para outras pessoas além delas mesmas. Essa situação é representada no nosso exemplo abaixo onde temos um dicionario de endereços (chaves) principais (que guardam dinheiro no contrato) e os valores dentro desses endereços há outra lista de endereços que são chaves e dentro dessas chaves há valores bool, que podem ser positivo ou negativo.
 
 Resumidamente, temos uma lista de endereços que guarda outros endereços e valors true ou false para indicar se esses endereços podem ou não realizar uma determinada ação.
 
