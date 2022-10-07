@@ -1,14 +1,14 @@
-# Olá Mundo
+# Hola Mundo
 
-`pragma` especifica a versão do compilador do Solidity.
+`pragma` especifica la versión del compilador de Solidity.
 
 ```solidity
 // SPDX-License-Identifier: MIT
-// a versão do compilador deve ser maior que ou igual a 0.8.3 e menor que 0.9.0
+// la versión del compilador debe ser mayor que o igual a 0.8.3 y menor que 0.9.0
 pragma solidity ^0.8.3;
 
-contract OlaMundo {
-    string public greet = "Olá Mundo!";
+contract HolaMundo {
+    string public greet = "Hola Mundo!";
 }
 ```
 

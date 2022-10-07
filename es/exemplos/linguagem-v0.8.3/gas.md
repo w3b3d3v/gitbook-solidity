@@ -1,23 +1,23 @@
-# Gás
+# Gas
 
-#### Quanto`ether` você precisa para pagar uma transação? <a href="#how-much-ether-do-you-need-to-pay-for-a-transaction" id="how-much-ether-do-you-need-to-pay-for-a-transaction"></a>
+#### Cuánto`ether` se necesita para pagar una transacción? <a href="#how-much-ether-do-you-need-to-pay-for-a-transaction" id="how-much-ether-do-you-need-to-pay-for-a-transaction"></a>
 
-Você paga a quantia de `gas spent * gas price` em `ether`, onde
+Pagas la cantidad de `gas spent * gas price` en `ether`, donde
 
-* `gas` é uma unidade de computação
-* `gas spent` é o total de `gas` usado numa transação
-* `gas price` é quanto de `ether` você pretende pagar por `gas`
+* `gas` es una unidad computacional
+* `gas spent` es la cantidad total de `gas` usado en una transacción
+* `gas price` es cuanto `ether` estás dispuesto a pagar por `gas`
 
-Transações com maior preço de gas apresentam maior prioridade para serem incluídas em um bloco.
+Transacciones con mayor precio de gas tienen mayor prioridad de ser incluidas en un bloque.
 
-O gás que não é gasto será reembolsado.
+El gas no gastado será reembolsado.
 
-#### Limite de gás <a href="#gas-limit" id="gas-limit"></a>
+#### Límite de gas <a href="#gas-limit" id="gas-limit"></a>
 
-&#x20;Existem 2 limites máximos para a quantidade de gás que você pode gastar
+&#x20;Existen 2 límites máximos para la cantidad de gas que se puede gastar
 
-* `gas limit` (máximo de gás que você pretende usar para sua transação, definido por você)
-* `block gas limit` (máximo de gás permitido num bloco, definido pela rede)
+* `gas limit` (máximo gas que estás dispuesto a usar en tu transacción, definido por ti)
+* `block gas limit` (máximo gas permitido en un bloque, definido por la red)
 
 ```
 // SPDX-License-Identifier: MIT
@@ -26,12 +26,12 @@ pragma solidity ^0.8.3;
 contract Gas {
     uint public i = 0;
 
-    // Usar todo o gás que você envia causa falha na sua transação.
-    // Mudanças de estado são desfeitas.
-    // Gás usado não é reembolsado .
+    // Usar todo el gas que usted envia hace que su transacción falle.
+    // Cambios de estado son deshechos.
+    // Gas usado no es reembolsado.
     function forever() public {
-        // Aqui rodamos um loop até que todo o gás seja gasto
-        // e a transação falha
+        // Aqui ejecutamos un loop hasta que todo el gas sea gastado
+        // y la transacción falla
         while (true) {
             i += 1;
         }
