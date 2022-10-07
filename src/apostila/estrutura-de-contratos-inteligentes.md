@@ -9,7 +9,7 @@ description: >-
 
 São realmente infinitas as possibilidades do que se pode fazer com eles mas seu funcionamento se resume em:
 
-![basic structure of smart contract](<../.gitbook/assets/image (108).png>)
+![basic structure of smart contract](<../.gitbook/assets/image (108).png>) 
 
 ###
 

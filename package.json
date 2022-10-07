@@ -1,0 +1,19 @@
+{
+  "name": "gitbook-solidity",
+  "version": "1.0.0",
+  "description": "Solidity Docs",
+  "main": "index.js",
+  "repository": "https://github.com/w3b3d3v/gitbook-solidity.git",
+  "author": "WEB3DEV Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@dovyp/vuepress-plugin-clipboard-copy": "^1.0.0-alpha.7",
+    "vuepress": "^1.9.7",
+    "vuepress-theme-reco": "^1.6.6"
+  },
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src",
+    "build:gh_pages": "BASE_PATH=/gitbook-solidity/ vuepress build src"
+  }
+}
