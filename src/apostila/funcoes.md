@@ -20,7 +20,7 @@ description: >-
 
 ## O corpo de uma função.
 
-![](<../.gitbook/assets/image (67).png>)
+![](<../assets/image(67).png>)
 
 Essa estrutura pode variar, dependendo do contexto dessa função algumas _palavras-chave_ estarão implícitas por padrão da linguagem.
 
@@ -28,7 +28,7 @@ Essa estrutura pode variar, dependendo do contexto dessa função algumas _palav
 
 Funções podem receber parâmetros externos, veja a função abaixo.
 
-![](<../.gitbook/assets/image (33).png>)
+![](<../assets/image(33).png>)
 
 Por enquanto preste atenção somente nos parâmetros dentro dos parêntesis (uint a , uint b). Esse trecho de código indica que essa função recebe dois números, um está na variável 'a' e outro está na variável 'b'.&#x20;
 
@@ -36,7 +36,7 @@ Por enquanto preste atenção somente nos parâmetros dentro dos parêntesis (ui
 
 Funções também podem funcionar sem paraêmtros externos, como é o caso dessa função à baixo que somente retorna o número do bloco atual.
 
-![](<../.gitbook/assets/image (82).png>)
+![](<../assets/image(82).png>)
 
 
 
@@ -44,7 +44,7 @@ Funções também podem funcionar sem paraêmtros externos, como é o caso dessa
 
 Parâmetros de visibilidade definem como essa função poderá ser acessada.&#x20;
 
-![](<../.gitbook/assets/image (116).png>)
+![](<../assets/image(116).png>)
 
 
 
@@ -52,9 +52,9 @@ Parâmetros de visibilidade definem como essa função poderá ser acessada.&#x2
 
 Quando uma função é executa ela pode ou não alterar dados que estão guardados na blockchain. Para cada caso à uma palavra chave que define as permissões e possibilidades dessa função.
 
-![](<../.gitbook/assets/image (71).png>)
+![](<../assets/image(71).png>)
 
-![](<../.gitbook/assets/image (80).png>)
+![](<../assets/image(80).png>)
 
 pure é bastante usado para fazer calculos e retornar resultados.
 
@@ -62,7 +62,7 @@ pure é bastante usado para fazer calculos e retornar resultados.
 
 Há muitos casos de uso para modificadores mas um dos mais comuns é definir permissões e restrições no contrato para que somente o administrador possa fazer algumas coisas.
 
-![](<../.gitbook/assets/image (115).png>)
+![](<../assets/image(115).png>)
 
 Nesse caso temos uma função chamada _**somenteAdminAlteraIdade**_ que só poderá ser executada se o modificador _**somenteadm**_ retornar um valor **true**. Esse modificador verifica se o endereço que chamou o contrato é o endereço administrador, se sim irá retornar true e a função será executada.&#x20;
 
@@ -70,7 +70,7 @@ Nesse caso temos uma função chamada _**somenteAdminAlteraIdade**_ que só pode
 
 Algumas funções podem receber eth e outros tokens e para isso devem levar a palavra chave _payable._
 
-![](<../.gitbook/assets/image (44).png>)
+![](<../assets/image(44).png>)
 
 Funções com parâmetro de estado _view_ não podem ser pagáveis.
 
@@ -78,4 +78,4 @@ Funções com parâmetro de estado _view_ não podem ser pagáveis.
 
 Para que uma função retorne algum dado é preciso especificar o tipo de dado que será retornado, isso é feito através do parâmetro _**returns**_ é diferente da palavra chave _**return**_ que é usada para retornar o dado efetivamente.
 
-![](<../.gitbook/assets/image (22).png>)
+![](<../assets/image(22).png>)

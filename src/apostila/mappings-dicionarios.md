@@ -11,13 +11,13 @@ description: >-
 
 Assim como todas as outras [variáveis em solidity](tipos-de-variaveis.md) nós primeiros definimos o tipo do dicionário e depois seu nome. No nosso exemplo, temos um dicionário em que as _**chaves são endereços**_ e os **valores são números inteiros** que representam os saldos e o mapping se chama _**balances**_.
 
-![](<../.gitbook/assets/image (28).png>)
+![](<../assets/image(28).png>)
 
 ### Adicionando dados.
 
 Diferente das [listas](arrays-listas.md) onde indicamos o nome e a posição, com dicionários indicamos o nome e a chave. Nesse caso abaixo, dicionario balances no _endereço de quem chamar a transação_ ([msg.sender](variaveis-built-in-msg.sender-msg.value....md)) terá o valor 100 guardado.
 
-![](<../.gitbook/assets/image (113).png>)
+![](<../assets/image(113).png>)
 
 ### Ler dados.
 
@@ -25,25 +25,25 @@ Também muito parecido com listas mas ao invés de passar a posição-da-lista o
 
 
 
-![acessar dados](<../.gitbook/assets/image (91).png>)
+![acessar dados](<../assets/image(91).png>)
 
 ### Atualizar dados.
 
 Praticamente a mesma coisa que adicionar um novo dado, se no dicionário não existir nada no endereço de chave passado será adicionado pela primeira vez, se já existir algo será então substituído.
 
-![](<../.gitbook/assets/image (121).png>)
+![](<../assets/image(121).png>)
 
 ### Deletar dados.
 
 Esse sim é exatamente como em listas, basta passar a chave do dicionário após a instrução _**delete**_.
 
-![](<../.gitbook/assets/image (110).png>)
+![](<../assets/image(110).png>)
 
 ## Valor padrão
 
 Listas e Dicionários tem um valor padrão caso tentemos acessar uma chave ou posição-de-lista que não exista, esse valor é 0.
 
-![](<../.gitbook/assets/image (5).png>)
+![](<../assets/image(5).png>)
 
 ## Tipos Exóticos de Mappings.
 
@@ -53,7 +53,7 @@ Listas e Dicionários tem um valor padrão caso tentemos acessar uma chave ou po
 
 Resumidamente, temos uma lista de endereços que guarda outros endereços e valors true ou false para indicar se esses endereços podem ou não realizar uma determinada ação.
 
-![](<../.gitbook/assets/image (98).png>)
+![](<../assets/image(98).png>)
 
 ### Listas dentro de dicionários
 
@@ -61,4 +61,4 @@ Se estivermos contruíndo um jogo onde cada jogador pode jogar várias partidas 
 
 Nesse caso, pode haver um dicionário que guarda endereços como chave e dentro de cada endereço há uma lista de valores.
 
-![](<../.gitbook/assets/image (85).png>)
+![](<../assets/image(85).png>)
