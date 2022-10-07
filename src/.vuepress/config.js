@@ -1,7 +1,15 @@
 module.exports = {
   title: "Guia Solidity",
   theme: "reco",
-  plugins: [["@dovyp/vuepress-plugin-clipboard-copy", true]],
+  plugins: [
+    ["@dovyp/vuepress-plugin-clipboard-copy", true],
+    [
+      "@vuepress/google-analytics",
+      {
+        ga: "G-2FGEVX605M", // UA-00000000-0
+      },
+    ],
+  ],
 
   base: process.env.BASE_PATH || "/",
   dest: "./dist",
@@ -47,6 +55,24 @@ module.exports = {
             rel: "",
             icon: "reco-home",
           },
+          {
+            text: "Discord",
+            link: "https://discord.web3dev.com.br/",
+            target: "_blank",
+            rel: "",
+          },
+          {
+            text: "Manual da Comunidade",
+            link: "https://docs.web3dev.com.br/",
+            target: "_blank",
+            rel: "",
+          },
+          {
+            text: "Glossário",
+            link: "https://glossario.web3dev.com.br/",
+            target: "_blank",
+            rel: "",
+          },
           { text: "Índice", link: "/" },
         ],
         sidebar: require("./config/sidebar-pt"),
@@ -60,6 +86,12 @@ module.exports = {
             target: "_self",
             rel: "",
             icon: "reco-home",
+          },
+          {
+            text: "Discord",
+            link: "https://es.discord.w3d.community/",
+            target: "_blank",
+            rel: "",
           },
           { text: "Índice", link: "/es/", icon: "" },
         ],
