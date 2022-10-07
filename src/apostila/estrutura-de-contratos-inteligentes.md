@@ -1,12 +1,11 @@
 ---
+title: 1. Estrutura de Contratos Inteligentes
+lang: pt-BR
 description: >-
   Smart contract são conjuntos de regras matemática definidas previamente. Essas
   regras podem estar condicionadas à contextos, ex: só executar se for dia X do
   ano ou só executar à cada 3 dias etc...
 ---
-
-# 1. Estrutura de Contratos Inteligentes
-
 São realmente infinitas as possibilidades do que se pode fazer com eles mas seu funcionamento se resume em:
 
 ![basic structure of smart contract](<../assets/image(108).png>) 
