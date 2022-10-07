@@ -1,8 +1,8 @@
-# Sombreamento de Variáveis de Estado Herdadas
+# Sombreado de Variables de Estado Heredados
 
-Ao contrário das funções, as variáveis de estado não podem ser substituídas por redeclaração no contrato de classe filho.
+Al contrario de las funciones, las variables de estado no pueden sobreescribirse por redeclaración en el contrato hijo.
 
-Vamos aprender como substituir corretamente variáveis de estado herdadas.
+Vamos a aprender como sobreescribir correctamente las variables de estado heredadas.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -16,18 +16,18 @@ contract A {
     }
 }
 
-// Sombreamento não é permitido no Solidity 0.6
-// Isto não vai compilar
-// contrato B é A {
+// Sombreado no está permitido en Solidity 0.6
+// Esto no compilará
+// contract B is A {
 //     string public name = "Contract B";
 // }
 
 contract C is A {
-    // Esta é a forma correta de substituir variáveis de estado herdadas.
+    // Esta es la forma correcta de sobreescribir las variables de estado heredadas.
     constructor() {
         name = "Contract C";
     }
 
-    // C.getName retorna "Contract C"
+    // C.getName devuelve "Contract C"
 }
 ```

@@ -1,20 +1,20 @@
-# Herança
+# Herencia
 
-Solidity suporta herança múltipla. Contratos podem herdar outro contrato usando a palavra-chave `is`.
+Solidity soporta herencia múltiple. Los contratos pueden heredar de otro contrato usando la palabra reservada `is`.
 
-Função que será substituída por um contrato da classe filho deve ser declarada como `virtual`.
+Función que será sobreescrita por un contrato hijo debe ser declarada como `virtual`.
 
-Função que vai substituir uma função da classe pai deve usar a palavra-chave `override`.
+Función que va a sobreescribir una función padre debe usar la palabra reservada `override`.
 
-A ordem da herança é importante.
+El orden de herencia es importante.
 
-Você deve listar contratos da classe pai na ordem do "mais básico" para o "mais derivado".
+Debes listar los contratos padres en el orden desde lo "más básico" hacia lo "más derivado".
 
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
 
-/* Gráfico de herança
+/* Gráfico de herencia
     A
    / \
   B   C
@@ -29,44 +29,44 @@ contract A {
     }
 }
 
-// Contratos herdam outros contratos usando a palavra-chave 'is'.
+// Contratos heredan de otro contrato usando la palabra reservada `is`.
 contract B is A {
-    // Substitui A.foo()
+    // Sobreescribe A.foo()
     function foo() public pure virtual override returns (string memory) {
         return "B";
     }
 }
 
 contract C is A {
-    // Substitui A.foo()
+    // Sobreescribe A.foo()
     function foo() public pure virtual override returns (string memory) {
         return "C";
     }
 }
 
-// Contratos podem herdar de múltiplos contratos de classe pai.
-// Quando uma função é chamada que é definida múltiplas vezes em
-// contratos diferentes, contratos da classe pai são procurados da
-// direita para a esquerda, e por busca de profundidade.
+// Contratos pueden heredar de múltiples contratos padre.
+// Cuando una función es invocada y está definida múltiples veces en
+// contratos diferentes, los contratos padres son buscados desde
+// derecha hacia la izquierda, y por profundidad en primer lugar.
 
 contract D is B, C {
-    // D.foo() retorna "C"
-    // já que C é o contrato de classe pai mais da direita com função foo()
+    // D.foo() devuelve "C"
+    // ya que C es el contrato padre más a la derecha con la función foo()
     function foo() public pure override(B, C) returns (string memory) {
         return super.foo();
     }
 }
 
 contract E is C, B {
-    // E.foo() retorna "B"
-    // já que B é o contrato de classe pai mais da direita com função foo()
+    // E.foo() devuelve "B"
+    // ya que B es el contrato padre más a la derecha con la función foo()
     function foo() public pure override(C, B) returns (string memory) {
         return super.foo();
     }
 }
 
-// Herança deve ser ordenada do "mais básico" para o "mais derivado".
-// Trocar a ordem de A e B cria um erro de compilação.
+// Herencia debe ser ordenada de los "más básico" hacia lo "más derivado".
+// Intercambiar el orden de A y B arrojará un error de compilación.
 contract F is A, B {
     function foo() public pure override(A, B) returns (string memory) {
         return super.foo();

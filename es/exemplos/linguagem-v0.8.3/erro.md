@@ -1,14 +1,14 @@
-# Erro
+# Errores
 
-Um erro desfaz todas as mudanças feitas no estado durante uma transação.
+Un error deshará todos los cambios hechos al estado durante una transacción.
 
-Você pode lançar um erro chamando `require`, `revert` or `assert`.
+Puedes lanzar un error invocando `require`, `revert` o `assert`.
 
-* `require` é usado para validar entradas e condições antes da execução.
-* `revert` é semelhante  a `require`. Veja o código abaixo para detalhes.
-* `assert` é usado para checar se existe código que nunca deve ser falso. Afirmação falha provavelmente significa que existe um bug.
+* `require` es usado para validar entradas y condiciones previas a una ejecución.
+* `revert` es similar a `require`. Observa el código de abajo para mayor detalle.
+* `assert` es usado para comprobar que el código nunca debe ser falso. La afirmación fallida probablemente significa que existe um bug.
 
-Use erro personalizado para economizar gás.
+Usa errores personalizados para ahorrar gas.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -16,16 +16,16 @@ pragma solidity ^0.8.3;
 
 contract Error {
     function testRequire(uint _i) public pure {
-        // Require deve ser usado para validar condições como:
+        // Require debe ser usado para validar condiciones como:
         // - entradas
-        // - condições anteriores à execução
-        // - valores retornados de chamadas para outras funções
+        // - condiciones previas a la ejecución
+        // - valores devueltos de invocaciones a otras funciones
         require(_i > 10, "Input must be greater than 10");
     }
 
     function testRevert(uint _i) public pure {
-        // Revert é útil quando a condição a ser verificada é complexa.
-        // Esse código faz exatamente a mesma coisa que o exemplo acima
+        // Revert es útil cuando la condición a ser verificada es compleja.
+        // Este código hace exactamente la misma cosa que el ejemplo de arriba
         if (_i <= 10) {
             revert("Input must be greater than 10");
         }
@@ -34,15 +34,15 @@ contract Error {
     uint public num;
 
     function testAssert() public view {
-        // Assert somente deve ser usada para testar erros internos,
-        // e para checar invariantes.
+        // Assert solamente debe ser usado para testear errores internos,
+        // y para comprobar invariantes.
 
-        // Aqui nós afirmamos que num é sempre igual a 0
-        // já que é impossível atualizar o valor de num
+        // Aquí afirmamos que num es siempre igual a 0
+        // ya que es imposible actualizar el valor de num
         assert(num == 0);
     }
 
-    // erro personalizado
+    // error personalizado
     error InsufficientBalance(uint balance, uint withdrawAmount);
 
     function testCustomError(uint _withdrawAmount) public view {
@@ -54,7 +54,7 @@ contract Error {
 }
 ```
 
-Aqui está outro exemplo
+Aquí otro ejemplo
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -68,7 +68,7 @@ contract Account {
         uint oldBalance = balance;
         uint newBalance = balance + _amount;
 
-        // balance + _amount não entra em condição de overflow se balance + _amount >= balance
+        // balance + _amount no causa overflow si balance + _amount >= balance
         require(newBalance >= oldBalance, "Overflow");
 
         balance = newBalance;
@@ -79,7 +79,7 @@ contract Account {
     function withdraw(uint _amount) public {
         uint oldBalance = balance;
 
-        // balance - _amount não entra em condição de underflow se balance >= _amount
+        // balance - _amount no causa underflow si balance >= _amount
         require(balance >= _amount, "Underflow");
 
         if (balance < _amount) {

@@ -1,18 +1,18 @@
 # Eventos
 
-`Events` permite logar o blockchain do Ethereumn. Alguns casos de uso de eventos são:
+`Events` permite registrar (logging) en el blockchain de Ethereum. Algunos casos de uso de eventos son:
 
-* Monitorar os eventos e atualizar a interface do usuário
-* Uma forma econômica de armazenamento
+* Escuchar los eventos y actualizar la interfaz de usuario
+* Una forma barata de almacenamiento
 
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
 
 contract Event {
-    // Declaração do evento
-    // Podem ser indexados até 3 parâmetros.
-    // Parâmetros indexados ajudam a filtrar os logs 
+    // Declaración del evento
+    // Pueden ser indexados hasta 3 parámetros.
+    // Parámetros indexados ayudan a filtrar los logs 
     event Log(address indexed sender, string message);
     event AnotherLog();
 
