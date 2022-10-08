@@ -1,41 +1,41 @@
-# Modificador de função
+# Modificador de función
 
-Modificadores são códigos que podem ser rodados antes e / ou depois de chamar uma função.
+Modificadores son códigos que pueden ser ejecutados antes y / o después de invocar una función.
 
-Modificadores podem ser usados para:
+Los modificadores pueden ser usados para:
 
-* Restrição de acesso
-* Validação de entradas
-* Proteção contra hack de reentrada
+* Restricción de acceso
+* Validación de entradas
+* Protección contra hack de reentrada (reentrancy hack)
 
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
 
 contract FunctionModifier {
-    // Vamos utilizar essas variáveis para demonstrar como usar
+    // Usaremos estas variables para demostrar como usar los
     // modificadores.
     address public owner;
     uint public x = 10;
     bool public locked;
 
     constructor() {
-        // Define o remetente da transação como dono do contrato.
+        // Establece al emisor de la transacción como dueño del contrato.
         owner = msg.sender;
     }
 
-    // Modificador para checar se quem chama é o proprietário 
-    // do contrato.
+    // Modificador que verifica que quien llama es el dueño 
+    // del contrato.
     modifier onlyOwner() {
         require(msg.sender == owner, "Not owner");
-        // Underscore é um caractere especial somente usado dentro
-        // de um modificador de função que diz ao Solidity para
-        // executar o resto do código.
+        // Underscore es un carácter especial usado solamente dentro
+        // de un modificador de función que le dice a Solidity que
+        // ejecute el resto del código.
         _;
     }
 
-    // Modificadores podem receber input. Esse modificador checa se
-    // o endereço passado não é endereço zero.
+    // Modificadores pueden recibir entradas. Este modificador verifica si
+    // la dirección recibida no es la dirección cero.
     modifier validAddress(address _addr) {
         require(_addr != address(0), "Not valid address");
         _;
@@ -45,9 +45,9 @@ contract FunctionModifier {
         owner = _newOwner;
     }
 
-    // Modificadores podem ser chamados antes e / ou depois de uma função.
-    // Esse modificador impede que uma função seja chamada enquanto
-    // esteja sendo executada.
+    // Modificadores pueden ser invocados antes y / o después de uma función.
+    // Este modificador previene que una función sea invocada mientras
+    // esté siendo ejecutada.
     modifier noReentrancy() {
         require(!locked, "No reentrancy");
 

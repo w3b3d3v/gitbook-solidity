@@ -1,10 +1,10 @@
-# Localizações de Dados - Armazenamento, Memória e Calldata
+# Localizaciones de Datos - Almacenamiento, Memoria y Calldata
 
-Variáveis são declaradas como `storage`, `memory`ou `calldata` para especificar claramente a localização dos dados.
+Variables son declaradas como `storage`, `memory` o `calldata` para especificar explícitamente la localización de los datos.
 
-* `storage` - é uma variável de estado (armazena no blockchain)
-* `memory` - é uma variável que está na memória e existe enquanto uma função está sendo chamada
-* `calldata` - localização de dados especiais que contém argumentos de função, somente disponível para funções `external`&#x20;
+* `storage` - es una variable de estado (almacenada en el blockchain)
+* `memory` - es una variable que está en memoria y existe mientras una función es invocada
+* `calldata` - localización especial de datos que contiene argumentos de función, solamente disponible para funciones `external`&#x20;
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -19,12 +19,12 @@ contract DataLocations {
     mapping(uint => MyStruct) myStructs;
 
     function f() public {
-        // chama _f com variáveis de estado
+        // invoca _f con variables de estado
         _f(arr, map, myStructs[1]);
 
-        // obtém uma struct de um mapping
+        // obtiene un struct de un mapping
         MyStruct storage myStruct = myStructs[1];
-        // cria uma struct na memória
+        // crea un struct en memoria
         MyStruct memory myMemStruct = MyStruct(0);
     }
 
@@ -33,16 +33,16 @@ contract DataLocations {
         mapping(uint => address) storage _map,
         MyStruct storage _myStruct
     ) internal {
-        // opera com variáveis armazenadas
+        // realiza operaciones con variables storage
     }
 
-    // Você pode retornar variáveis de memória
+    // Puedes devolver variables de memoria
     function g(uint[] memory _arr) public returns (uint[] memory) {
-        // opera com a matriz de memória
+        // realiza operaciones con el arreglo de memoria
     }
 
     function h(uint[] calldata _arr) external {
-        // opera com matriz calldata 
+        // realiza operaciones con el arreglo de calldata 
     }
 }
 ```
