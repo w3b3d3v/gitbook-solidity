@@ -5,6 +5,7 @@ title: 3. Funções
   Funções são usadas para encapsular trechos de código para serem
   chamados/invocados sempre que necessário, evitando assim a necessidade de reescreve-los.
 :::
+
 ### Algumas definições
 
 * Possuem uma palavra chave de definição.
@@ -13,10 +14,10 @@ title: 3. Funções
 * Possuem um parâmetro de visibilidade.
 * Possuem um identificador de estado.
 * Podem receber modificadores.
-* Podem ser págaveis (receber eth/cripto).
+* Podem ser pagáveis (receber eth/cripto).
 * Podem ou não retornar dados.
 
-## O corpo de uma função.
+## O corpo de uma função
 
 ![](<../assets/image(67).png>)
 
@@ -28,23 +29,19 @@ Funções podem receber parâmetros externos, veja a função abaixo.
 
 ![](<../assets/image(33).png>)
 
-Por enquanto preste atenção somente nos parâmetros dentro dos parêntesis (uint a , uint b). Esse trecho de código indica que essa função recebe dois números, um está na variável 'a' e outro está na variável 'b'.&#x20;
+Por enquanto preste atenção somente nos parâmetros dentro dos parêntesis (uint a , uint b). Esse trecho de código indica que essa função recebe dois números, um está na variável 'a' e outro está na variável 'b'.
 
 #### Sem parâmetros
 
-Funções também podem funcionar sem paraêmtros externos, como é o caso dessa função à baixo que somente retorna o número do bloco atual.
+Funções também podem funcionar sem parâmetros externos, como é o caso dessa função à baixo que somente retorna o número do bloco atual.
 
 ![](<../assets/image(82).png>)
 
-
-
 ## Visibilidade
 
-Parâmetros de visibilidade definem como essa função poderá ser acessada.&#x20;
+Parâmetros de visibilidade definem como essa função poderá ser acessada.
 
 ![](<../assets/image(116).png>)
-
-
 
 ## Estados
 
@@ -54,7 +51,7 @@ Quando uma função é executa ela pode ou não alterar dados que estão guardad
 
 ![](<../assets/image(80).png>)
 
-pure é bastante usado para fazer calculos e retornar resultados.
+pure é bastante usado para fazer cálculos e retornar resultados.
 
 ## Modificadores
 
@@ -62,7 +59,7 @@ Há muitos casos de uso para modificadores mas um dos mais comuns é definir per
 
 ![](<../assets/image(115).png>)
 
-Nesse caso temos uma função chamada _**somenteAdminAlteraIdade**_ que só poderá ser executada se o modificador _**somenteadm**_ retornar um valor **true**. Esse modificador verifica se o endereço que chamou o contrato é o endereço administrador, se sim irá retornar true e a função será executada.&#x20;
+Nesse caso temos uma função chamada _**somenteAdminAlteraIdade**_ que só poderá ser executada se o modificador _**somenteadm**_ retornar um valor **true**. Esse modificador verifica se o endereço que chamou o contrato é o endereço administrador, se sim irá retornar true e a função será executada.
 
 ## Funções pagáveis (Payable)
 

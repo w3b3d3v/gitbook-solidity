@@ -24,7 +24,7 @@ Quando for feito o deploy do contrato que estiver sendo escrito, um minerador ir
 
 ## block.difficulty
 
-O parâmetro dificuldade é o que "regula" a emissão de novas moedas dentro de uma rede baseado na quantidade de mineradores que estão trabalhando nisso e esse parâmetro está sempre sendo ajustado de acordo com a oferta e demanda de poder computacional para realizar os testes de hash. Atráves de block.difficulty é possível acessar a dificuldade de mineração no bloco atual.
+O parâmetro dificuldade é o que "regula" a emissão de novas moedas dentro de uma rede baseado na quantidade de mineradores que estão trabalhando nisso e esse parâmetro está sempre sendo ajustado de acordo com a oferta e demanda de poder computacional para realizar os testes de hash. Através de block.difficulty é possível acessar a dificuldade de mineração no bloco atual.
 
 ![](<../assets/image(103).png>)
 
@@ -44,7 +44,7 @@ No momento em que escrevo isso o bloco atual da rede Ethereum é [13525758](http
 
 ## block.timestamp
 
-Timestamp é um formato muito conhecido para _encodar_ data e hora em um formato númerico, por exemplo o timestamp de agora é: 1635696570.
+Timestamp é um formato muito conhecido para _encodar_ data e hora em um formato numérico, por exemplo o timestamp de agora é: 1635696570.
 
 ![](../assets/image.png)
 

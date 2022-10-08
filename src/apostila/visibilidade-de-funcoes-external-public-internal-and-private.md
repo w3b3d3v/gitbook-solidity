@@ -8,7 +8,7 @@ title: 5. Visibilidade de Funções (external, public, internal & private)
 
 ## External
 
-Essa função estará acessivel somente de fora do contrato, ele próprio não conseguirá chamá-la.
+Essa função estará acessível somente de fora do contrato, ele próprio não conseguirá chamá-la.
 
 ![](<../assets/image(39).png>)
 

@@ -2,20 +2,18 @@
 title: 2. Tipos de Variáveis
 ---
 ::: tip
-    Variáveis são como caixas para guardarem coisas. Em um amibiente de
+    Variáveis são como caixas para guardarem coisas. Em um ambiente de
     desenvolvimento e programação elas são para guardar dados, números,
     estruturas, textos...
 :::
 
-### Considerações importantes.
+### Considerações importantes
 
 * Há tipos simples e comuns de variáveis
 * Há variáveis complexas e com casos de uso específico
 * Quando digo "simples" e complexa" refiro-me a profundidade de entendimento necessário para manipula-las e saber o porquê usa-las.
 
-
-
-## Uma breve introdução de como as variáveis funcionam.
+## Uma breve introdução de como as variáveis funcionam
 
 Os tipos de dados em solidity são explícitos, ou seja nós precisamos definir através de uma _palavra chave_ qual é o tipo da variável. No print abaixo o tipo e o nome da variável estão em azul e o seu conteúdo está em amarelo.
 
@@ -27,13 +25,11 @@ Após definirmos o tipo da variável e seu nome podemos definir o seu valor ou e
 
 ![](<../assets/image(41).png>)
 
-exemplo de variável definida que será usada depois. (ignore a parte do código que você não entender agora)
+exemplo de variável definida que será usada depois. (Ignore a parte do código que você não entender agora).
 
 ![](<../assets/image(76).png>)
 
-Nesse caso temos uma função chamada _qualSeuNome_ que irá receber de fora do programa um texto digitado, que será armazenado em uma variável temporária chamada _nome\_digitado_ e depois a váriavel _nome_ que foi definida antes receberá esse valor. Depois da execução dessa função a variável _nome_ terá o valor que foi passado pra ela através da função _qualSeuNome_.
-
-
+Nesse caso temos uma função chamada _qualSeuNome_ que irá receber de fora do programa um texto digitado, que será armazenado em uma variável temporária chamada _nome\_digitado_ e depois a variável _nome_ que foi definida antes receberá esse valor. Depois da execução dessa função a variável _nome_ terá o valor que foi passado pra ela através da função _qualSeuNome_.
 
 ## Principais tipos de variáveis:
 
@@ -49,31 +45,31 @@ o tipo _address_ armazena endereços de carteiras e outros contratos.
 
 _bool_ é um tipo de dado primitivo que representa dois valores: verdadeiro ou falso. Em inglês: _true_ and _false_.
 
-#### Números inteiros positivos.
+#### Números inteiros positivos
 
 ![](<../assets/image(20).png>)
 
 Para armazenar números inteiros positivos usamos o tipo _uint_ e para números de tamanho definido podemos usar por exemplo _uint256_ para números de 256 bytes.
 
-#### Texto simples (string).
+#### Texto simples (string)
 
 ![](<../assets/image(88).png>)
 
-_string_ é a forma mais comum de armazenar textos mas também podemos usar o formato _bytes32_ para tamanhos definidos e otimização de gas_._
+_string_ é a forma mais comum de armazenar textos mas também podemos usar o formato _bytes32_ para tamanhos definidos e otimização de gas.
 
-#### Texto com tamanho específico (bytes)
+#### Texto com tamanho específico (Bytes)
 
 ![](<../assets/image(11).png>)
 
-#### Listas específicas (arrays)
+#### Listas específicas (Arrays)
 
-É muito importante saber como arrays funcionam pois são muito usados. Há uma semelhança enorme entre _listas_ e _arrays_ e a maior diferença entre eles é que _arrays são listas de um unico tipo de dado._ Só podemos ter uma lista de números ou uma lista de textos ou uma lista de endereços... não se pode misturar os tipos de dados.
+É muito importante saber como arrays funcionam pois são muito usados. Há uma semelhança enorme entre _listas_ e _arrays_ e a maior diferença entre eles é que _arrays são listas de um único tipo de dado._ Só podemos ter uma lista de números ou uma lista de textos ou uma lista de endereços... não se pode misturar os tipos de dados.
 
 ![](<../assets/image(65).png>)
 
 Seguindo a lógica de antes primeiro define-se o tipo da variável e depois o seu nome. Para definir um array usa-se o seu tipo de dado mais "\[]".
 
-#### Chave e valor (mapping).
+#### Chave e valor (Mapping)
 
 Pode-se dizer que _mapping_ é como os dicionários em outras linguagens. Utiliza-se um tipo de "lista" de chaves e cada chave guarda um valor.
 
@@ -81,13 +77,13 @@ Pode-se dizer que _mapping_ é como os dicionários em outras linguagens. Utiliz
 
 Nesse caso temos uma "lista" chamada saldos que possui _endereços_ como _chave_ e dentro de cada endereço está guardado um valor.
 
-#### Estrutura de dados (struct).
+#### Estrutura de dados (Struct)
 
-É o tipo de dado mais parecido com _Objetos_ em outras linguagens. É muito usado para definir uma estrutura padrão de variáveis a serem usadas em contextos específicos.&#x20;
+É o tipo de dado mais parecido com _Objetos_ em outras linguagens. É muito usado para definir uma estrutura padrão de variáveis a serem usadas em contextos específicos.
 
 ![](<../assets/image(27).png>)
 
-Por exemplo, se você construir um programa que precisa do nome de um usuario, seu id e uma lista de produtos ou NFTs que ele comprou, e precisar disso em vários contextos do seu programa a forma mais compreensível e legível de manipular isso é usando uma estrutura definida de variáveis.
+Por exemplo, se você construir um programa que precisa do nome de um usuário, seu id e uma lista de produtos ou NFTs que ele comprou, e precisar disso em vários contextos do seu programa a forma mais compreensível e legível de manipular isso é usando uma estrutura definida de variáveis.
 
 #### Variáveis categóricas (Enums)
 
