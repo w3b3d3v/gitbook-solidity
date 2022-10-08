@@ -1,10 +1,10 @@
 ---
-title:  2. Tipos de Variáveis
+title: 2. Tipos de Variáveis
 ---
 ::: tip
-Variáveis são como caixas para guardarem coisas. Em um amibiente de
-desenvolvimento e programação elas são para guardar dados, números,
-estruturas, textos...
+    Variáveis são como caixas para guardarem coisas. Em um amibiente de
+    desenvolvimento e programação elas são para guardar dados, números,
+    estruturas, textos...
 :::
 
 ### Considerações importantes.

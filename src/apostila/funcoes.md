@@ -1,10 +1,10 @@
 ---
 title: 3. Funções
-description: >-
-  Funções são usadas para encapsular trechos de código para serem
-  chamados/invocados sempre que necessário, evitando assim a necessidade de
-  reescreve-los.
 ---
+::: tip
+  Funções são usadas para encapsular trechos de código para serem
+  chamados/invocados sempre que necessário, evitando assim a necessidade de reescreve-los.
+:::
 ### Algumas definições
 
 * Possuem uma palavra chave de definição.

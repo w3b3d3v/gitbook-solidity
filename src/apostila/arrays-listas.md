@@ -1,10 +1,10 @@
 ---
-description: >-
+title: 8. Arrays (Listas)
+---
+::: tip
   Arrays são listas de um único tipo de dado e as utilidades e aplicações são
   praticamente infinitas.
----
-
-# 8. Arrays (Listas)
+:::
 
 ## Criando Arrays
 

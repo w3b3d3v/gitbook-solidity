@@ -1,10 +1,10 @@
 ---
-description: >-
+title: 9. Controladores de Fluxo (if, for, while)
+---
+::: tip
   A parte mais importante de toda programação é a lógica de como um script é
   programado e controladores de fluxo são os tijolos dessa construção.
----
-
-# 9. Controladores de Fluxo (if, for, while)
+:::
 
 ## If & else
 

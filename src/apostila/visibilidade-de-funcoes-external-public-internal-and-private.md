@@ -1,10 +1,10 @@
 ---
-description: >-
+title: 5. Visibilidade de Funções (external, public, internal & private)
+---
+::: tip
   As funções e/ou variáveis de um contrato podem estar sujeitas a quatro
   parâmetros de visibilidade.
----
-
-# 5. Visibilidade de Funções (external, public, internal & private)
+:::
 
 ## External
 

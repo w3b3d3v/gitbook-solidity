@@ -1,11 +1,9 @@
 ---
-description: >-
-  Usando funções podemos guardar novos dados na blockchain, ler dados guardados
-  na blockchain ou modifica-los. Cada tipo de função irá exigir um tipo de
-  chamada diferente e consequentemente um custo dif
+title: 4. Parâmetros de estado (view, pure)
 ---
-
-# 4. Parâmetros de estado (view, pure)
+::: tip
+  Usando funções podemos guardar novos dados na blockchain, ler dados guardados na blockchain ou modifica-los. Cada tipo de função irá exigir um tipo de chamada diferente e consequentemente um custo diferente.
+:::
 
 ## Por padrão.
 

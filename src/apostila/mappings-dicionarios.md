@@ -1,11 +1,9 @@
 ---
-description: >-
-  Não é incorreto afirmar que mappings são como dicionários de outras linguagens
-  pois também se armazena dados utilizando uma estrutura de chave-valor. Você
-  verá eu usar as duas palavras nesse tutorial
+title: 10. Mappings (Dicionários)
 ---
-
-# 10. Mappings (Dicionários)
+::: tip
+  Não é incorreto afirmar que mappings são como dicionários de outras linguagens pois também se armazena dados utilizando uma estrutura de chave-valor. Você verá eu usar as duas palavras nesse tutorial.
+:::
 
 ### Criando um dicionário.
 
