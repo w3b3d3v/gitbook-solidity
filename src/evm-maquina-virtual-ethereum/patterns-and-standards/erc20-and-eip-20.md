@@ -1,11 +1,11 @@
 ---
-description: >-
+title: ERC20 & EIP-20
+---
+::: tip
   EIP são padrões de implementação com consenso da comunidade e mineradores para
   implementar alterações de comportamento na Máquina Virtual Ethereum. Já o ERC
-  se referem mais à padrões de smart contract
----
-
-# ERC20 & EIP-20
+  se referem mais à padrões de smart contract.
+:::
 
 A proposta [EIP-20](https://eips.ethereum.org/EIPS/eip-20) foi criada por Vitalik Buterin e Vogelsteller em novembro de 2015 e se refere à padrões de desenvolvimento para implementar tokens fungíveis.
 
@@ -15,11 +15,11 @@ Sabe-se que o primeiro token no formato ERC-20 que foi criado baseando-se nesse 
 
 ## **Tokens ERC-20**
 
-Possuem 6 funções _**obrigatórias**_ e outras _**opcionais** e dispara 2_ **Eventos obrigatórios**_**.**_
+Possuem 6 funções _**obrigatórias**_ e outras _**opcionais** e dispara 2_ **Eventos obrigatórios**.
 
 ### **Funções Obrigatórias:**
 
-#### totalSupply: Retorna a quantidade de tokens disponíveis.
+#### totalSupply: Retorna a quantidade de tokens disponíveis
 
 ```
 function totalSupply() public view returns (uint256)
@@ -31,25 +31,25 @@ function totalSupply() public view returns (uint256)
 function balanceOf(address _owner) public view returns (uint256 balance)
 ```
 
-#### transfer: Transfere uma quantidade \_value de tokens da para a conta \_to.
+#### transfer: Transfere uma quantidade \_value de tokens da para a conta \_to
 
 ```
 function transfer(address _to, uint256 _value) public returns (bool success)
 ```
 
-#### transferFrom: Permite que endereços autorizados façam transferências "em seu nome" (Função usada pelas DEX para fazer compra e venda).&#x20;
+#### transferFrom: Permite que endereços autorizados façam transferências "em seu nome" (Função usada pelas DEX para fazer compra e venda)
 
 ```
 function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)
 ```
 
-#### approve: Dá autorização para que um endereço \_spender possa sacar até o valor passado em \_value. &#x20;
+#### approve: Dá autorização para que um endereço \_spender possa sacar até o valor passado em \_value
 
 ```
 function approve(address _spender, uint256 _value) public returns (bool success)
 ```
 
-#### Retorna o valor que o \_spender ainda está autorizado a sacar.
+#### Retorna o valor que o \_spender ainda está autorizado a sacar
 
 ```
 function allowance(address _owner, address _spender) public view returns (uint256 remaining)
@@ -63,13 +63,13 @@ function allowance(address _owner, address _spender) public view returns (uint25
 function name() public view returns (string)
 ```
 
-#### symbol: Retorna o symbolo do Token
+#### symbol: Retorna o símbolo do Token
 
 ```
 function symbol() public view returns (string)
 ```
 
-#### decimals: Retorna a quantidade de casas decimais que o Token possui.&#x20;
+#### decimals: Retorna a quantidade de casas decimais que o Token possui
 
 ```
 function decimals() public view returns (uint8)
@@ -77,13 +77,13 @@ function decimals() public view returns (uint8)
 
 ## Eventos
 
-#### event Approval: Sempre que um endereço autorizar que outros endereços movimentem seu saldo.
+#### event Approval: Sempre que um endereço autorizar que outros endereços movimentem seu saldo
 
 ```
 event Approval(address indexed _owner, address indexed _spender, uint256 _value)
 ```
 
-#### event Transfer: Sempre que houver uma transferência ou queima de tokens.
+#### event Transfer: Sempre que houver uma transferência ou queima de tokens
 
 ```
 event Transfer(address indexed _from, address indexed _to, uint256 _value)
@@ -91,7 +91,7 @@ event Transfer(address indexed _from, address indexed _to, uint256 _value)
 
 ## Extensões
 
-#### `ERC20Mintable:`  Permite que endereços autorizados criem novos tokens.
+#### `ERC20Mintable:`  Permite que endereços autorizados criem novos tokens
 
 ```
 modifier onlyMinter()
@@ -99,7 +99,7 @@ modifier onlyMinter()
 mint(account, amount) onlyMinter() {}
 ```
 
-#### `ERC20Burnable:` Irá queimar tokens do endereço que chamar essa função. <a href="#erc20burnable" id="erc20burnable"></a>
+#### `ERC20Burnable:` Irá queimar tokens do endereço que chamar essa função <a href="#erc20burnable" id="erc20burnable"></a>
 
 ```
 burn(amount)
@@ -107,7 +107,7 @@ burn(amount)
 burnFrom(account, amount)
 ```
 
-#### `ERC20Pausable:` Permite que as operações de compra e venda sejam pausadas. <a href="#erc20pausable" id="erc20pausable"></a>
+#### `ERC20Pausable:` Permite que as operações de compra e venda sejam pausadas <a href="#erc20pausable" id="erc20pausable"></a>
 
 ```
 Modifiers:
@@ -116,7 +116,7 @@ whenNotPaused()
 whenPaused()
 ```
 
-#### `ERC20Capped:` Há um limite de tokens que podem ser criados. <a href="#erc20capped" id="erc20capped"></a>
+#### `ERC20Capped:` Há um limite de tokens que podem ser criados <a href="#erc20capped" id="erc20capped"></a>
 
 ```
 constructor(cap) {}
