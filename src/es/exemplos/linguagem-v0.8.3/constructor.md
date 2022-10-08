@@ -1,8 +1,8 @@
 # Constructor
 
-Um`constructor` é uma função opcional que é executada com a criação de um contrato.
+Un `constructor` es una función opcional que es ejecutada cuando se crea el contrato.
 
-Aqui estão exemplos de como passar argumentos para `constructors`.
+A continuación ejemplos de como pasar argumentos a los `constructors`.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -26,24 +26,24 @@ contract Y {
     }
 }
 
-// Existem duas formas de inicializar um contrato de classe pai com parâmetros.
+// Existen dos formas de inicializar un contrato padre con parámetros.
 
-// Passe os parâmetros aqui na lista de herança.
+// Pasa los parámetros aquí en la lista de herencia.
 contract B is X("Input to X"), Y("Input to Y") {
 
 }
 
 contract C is X, Y {
-    // Passe os parâmetros aqui no constructor,
-    // semelhante aos modificadores de função.
+    // Pasa los parámetros aquí en el constructor,
+    // semejante a los modificadores de función.
     constructor(string memory _name, string memory _text) X(_name) Y(_text) {}
 }
 
-// Constructors da classe pai são sempre chamados na ordem de herança
-// independentemente da ordem dos contratos de classe pai listados no
-// constructor do contrato de classe filho.
+// Constructores padres son siempre invocados en el orden de herencia
+// independientemente del orden de los contratos padres listados en el
+// constructor del contrato hijo.
 
-// Ordem dos constructors chamados:
+// Orden de los constructores invocados:
 // 1. Y
 // 2. X
 // 3. D
@@ -51,7 +51,7 @@ contract D is X, Y {
     constructor() X("X was called") Y("Y was called") {}
 }
 
-// Ordem dos constructors chamados:
+// Orden de los constructores invocados:
 // 1. Y
 // 2. X
 // 3. E
