@@ -1,10 +1,10 @@
-# Funções View e Pure
+# Funciones View y Pure
 
-Funções Getter podem ser declaradas`view` or `pure`.
+Funciones Getter pueden ser declaradas`view` o `pure`.
 
-Função `View` declara que nenhum estado será mudado.
+Función `View` declara que no se cambiará ningún estado.
 
-Função `Pure` declara que nenhuma variável de estado será mudada ou lida.
+Función `Pure` declara que ninguna variable de estado será cambiada o leida.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -13,12 +13,12 @@ pragma solidity ^0.8.3;
 contract ViewAndPure {
     uint public x = 1;
 
-    // Promete que não haja modificação do estado.
+    // Promete que no modifica el estado.
     function addToX(uint y) public view returns (uint) {
         return x + y;
     }
 
-    // Promete não haja modificação ou leitura de um estado.
+    // Promete que no modifica o lee desde un estado.
     function add(uint i, uint j) public pure returns (uint) {
         return i + j;
     }
