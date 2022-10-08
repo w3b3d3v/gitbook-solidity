@@ -1,10 +1,10 @@
 ---
-description: >-
+title: Introdução
+---
+::: tip
   Outubro de 2021 e temos mais de meio TRILHÃO de dólares investidos e aplicados
   em Criptomoedas e blockchains que possuem ambiente Ethereum.
----
-
-# Introdução
+:::
 
 Este é um guia completo para programadores web3 que desejam aprender a linguagem Solidity. Ele foi criado e é mantido pela comunidade [_web3dev_](https://www.web3dev.com.br).
 
@@ -22,7 +22,7 @@ Você vai encontrar nesta documentação os seguintes conteúdos:
 
 [Apostila Completa](broken-reference) - Uma apostila com um passo a passo para você aprender como desenvolver um smart contract em Solidity.
 
-[Exemplos](exemplos/linguagem-v0.8.3/) - Exemplos de códigos muito direto ao ponto se você precisa de uma referência rápida da syntaxe da linguagem.
+[Exemplos](exemplos/linguagem-v0.8.3/) - Exemplos de códigos muito direto ao ponto se você precisa de uma referência rápida da sintaxe da linguagem.
 
 [\[EVM\] Máquina Virtual Ethereum](broken-reference) - Explicação sobre o funcionamento da EVM que é utilizado na rede Ethereum e também em outras redes como Fantom, Polygon e Binance Smart Chain.
 
