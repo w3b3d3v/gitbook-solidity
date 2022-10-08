@@ -1,2 +1,3 @@
-# Patterns and Standards
-
+---
+title: Patterns and Standards
+---

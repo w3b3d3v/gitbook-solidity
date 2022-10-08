@@ -1,2 +1,3 @@
-# Hardhat
-
+---
+title: Hardhat
+---
