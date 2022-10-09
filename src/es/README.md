@@ -1,11 +1,10 @@
 ---
-description: >-
+title: Introducción
+---
+::: tip
   Es octubre de 2021 y tenemos más de medio TRILLÓN de dólares invertidos y aplicados 
   en Criptomonedas y Blockchains relacionadas a Ethereum.
-
----
-
-# Introducción
+:::
 
 Esta es una guía completa para programadores web3 que quieran aprender a programar en Solidity. Fue creada y es mantenida por la comunidad [_web3dev_](https://www.web3dev.com.br).
 
