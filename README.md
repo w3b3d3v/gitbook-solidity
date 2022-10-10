@@ -1,10 +1,10 @@
 ---
-description: >-
+title: Introdução
+---
+::: tip
   Outubro de 2021 e temos mais de meio TRILHÃO de dólares investidos e aplicados
   em Criptomoedas e blockchains que possuem ambiente Ethereum.
----
-
-# Introdução
+:::
 
 Este é um guia completo para programadores web3 que desejam aprender a linguagem Solidity. Ele foi criado e é mantido pela comunidade [_web3dev_](https://www.web3dev.com.br).
 
