@@ -22,7 +22,7 @@ Você vai encontrar nesta documentação os seguintes conteúdos:
 
 [Apostila Completa](broken-reference) - Uma apostila com um passo a passo para você aprender como desenvolver um smart contract em Solidity.
 
-[Exemplos](exemplos/linguagem-v0.8.3/) - Exemplos de códigos muito direto ao ponto se você precisa de uma referência rápida da syntaxe da linguagem.
+[Exemplos](exemplos/linguagem-v0.8.13/) - Exemplos de códigos muito direto ao ponto se você precisa de uma referência rápida da syntaxe da linguagem.
 
 [\[EVM\] Máquina Virtual Ethereum](broken-reference) - Explicação sobre o funcionamento da EVM que é utilizado na rede Ethereum e também em outras redes como Fantom, Polygon e Binance Smart Chain.
 
