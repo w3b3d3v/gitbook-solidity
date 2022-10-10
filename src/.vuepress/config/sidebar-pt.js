@@ -51,7 +51,7 @@ module.exports = [
           "/exemplos/linguagem-v0.8.13/",
           "/exemplos/linguagem-v0.8.13/ola-mundo.md",
           "/exemplos/linguagem-v0.8.13/primeira-aplicacao.md",
-          "/exemplos/linguagem-v0.8.13/tipos-de-dados-primarios.md",
+          "/exemplos/linguagem-v0.8.13/tipos-dados-primitivos.md",
           "/exemplos/linguagem-v0.8.13/variaveis.md",
           "/exemplos/linguagem-v0.8.13/constantes.md",
           "/exemplos/linguagem-v0.8.13/imutaveis.md",
