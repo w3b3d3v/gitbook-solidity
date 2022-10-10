@@ -1,1 +1,3 @@
-# Remix IDE
+---
+title: Remix IDE
+---
