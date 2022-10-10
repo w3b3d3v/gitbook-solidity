@@ -1,2 +1,3 @@
-# Truffle
-
+---
+title: Truffle
+---
