@@ -88,10 +88,10 @@ module.exports = [
           "/exemplos/linguagem-v0.8.13/import.md",
           "/exemplos/linguagem-v0.8.13/biblioteca.md",
           "/exemplos/linguagem-v0.8.13/codificacao-abi.md",
-          "src/exemplos/linguagem-v0.8.13/decodificacao-abi.md",
+          "/exemplos/linguagem-v0.8.13/decodificacao-abi.md",
           "/exemplos/linguagem-v0.8.13/hashing-with-keccak256.md",
           "/exemplos/linguagem-v0.8.13/verificando-assinatura.md",
-          "src/exemplos/linguagem-v0.8.13/tecnicas-de-economia-de-gas.md",
+          "/exemplos/linguagem-v0.8.13/tecnicas-de-economia-de-gas.md",
           "/exemplos/linguagem-v0.8.13/operadores-bit-a-bit.md"
         ],
       },
