@@ -1,6 +1,6 @@
-# Contrato que cria outros Contratos
+# Contratos que crean otros Contratos
 
-Contratos podem ser criados por outros contratos usando a palavra-chave `new`. A partir da versão 0.8.0, a palavra-chave `new` suporta o recurso `create2` por meio da especificação de opções `salt`.
+Los contratos pueden ser creados por otros contratos usando la palabra reservada `new`. Desde la versión 0.8.0, la palabra `new` soporta la función `create2` especificando la característica `salt`.
 
 ```solidity
 // SPDX-License-Identifier: MIT
