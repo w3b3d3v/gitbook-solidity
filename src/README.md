@@ -25,8 +25,3 @@ Você vai encontrar nesta documentação os seguintes conteúdos:
 [Exemplos](exemplos/linguagem-v0.8.3/) - Exemplos de códigos muito direto ao ponto se você precisa de uma referência rápida da sintaxe da linguagem.
 
 [\[EVM\] Máquina Virtual Ethereum](broken-reference) - Explicação sobre o funcionamento da EVM que é utilizado na rede Ethereum e também em outras redes como Fantom, Polygon e Binance Smart Chain.
-
-
-
-
-
