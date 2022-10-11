@@ -1,43 +1,43 @@
-# Pagável
+# Pagable
 
-Funções e endereços declarados `payable` podem receber `ether` nesse contrato.
+Las funciones y direcciones declaradas `payable` pueden recibir `ether` en el contrato.
 
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
 
 contract Payable {
-    // Endereço pagável pode receber Ether
+    // Una dirección pagable puede recibir Ether
     address payable public owner;
 
-    // Constructor pagável pode receber Ether
+    // El constructor pagable puede recibir Ether
     constructor() payable {
         owner = payable(msg.sender);
     }
 
-    // Função para depositar Ether neste contrato.
-    // Chamar essa função junto com algum Ether.
-    // O saldo desse contrato será automaticamente atualizado.
+    // Función que deposita Ether a este contrato.
+    // Llama esta función junto a algunos Ether.
+    // El balance de este contrato será automáticamente actualizado.
     function deposit() public payable {}
 
-    // Chamar essa função junto com algum Ether.
-    // A função vai lançar um erro já que ela não é pagável.
+    // Invoca esta función junto a algunos Ether.
+    // La función dará un error ya que esta función no es pagable.
     function notPayable() public {}
 
-    // Função para retirar todo Ether deste contrato.
+    // Función para retirar todos los Ether de este contrato.
     function withdraw() public {
-        // pega a quantidade de Ether armazenado nesse contrato
+        // Obtiene la cantidad de Ether almacenado en este contrato
         uint amount = address(this).balance;
 
-        // envia todo Ether para o proprietário
-        // Proprietário pode receber Ether já que o endereço dele é pagável
+        // Envía todos los Ether al dueño
+        // El dueño puede recibir Ether ya que la dirección del dueño es pagable
         (bool success, ) = owner.call{value: amount}("");
         require(success, "Failed to send Ether");
     }
 
-    // Função para transferir Ether deste contrato para o endereço de entrada
+    // Función para transferir Ether de este contrato a la dirección indicada en el input
     function transfer(address payable _to, uint _amount) public {
-        // Note que "to" está declarada como pagável
+        // Note que "to" está declarada como pagable
         (bool success, ) = _to.call{value: _amount}("");
         require(success, "Failed to send Ether");
     }

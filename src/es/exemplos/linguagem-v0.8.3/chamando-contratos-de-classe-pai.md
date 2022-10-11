@@ -1,14 +1,14 @@
-# Chamando Contratos de Classe Pai
+# Invocando Contratos padres
 
-Contratos de classe pai podem ser chamados diretamente ou usando a palavra-chave `super`.
+Contratos padres pueden ser invocados directamente o usando la palabra reservada `super`.
 
-Usando a palavra-chave `super`, todos os contratos de classe pai imediatos serão chamados.
+Usando la palabra reservada `super`, todos los contratos padres inmediatos serán invocados.
 
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
 
-/* Árvore de herança
+/* Árbol de herencia
    A
  /  \
 B   C
@@ -17,9 +17,9 @@ B   C
 */
 
 contract A {
-    // Isto é chamado um evento. Você pode emitir eventos de sua função
-    // e eles serão logados no log da transação.
-    // No nosso caso, isso será útil para traçar chamadas de função.
+    // Esto es llamado un evento. Tu puedes emitir eventos desde tu función
+    // y ellos son registrados en el log de transacción.
+    // En nuestro caso, esto será útil para rastrear llamadas de función.
     event Log(string message);
 
     function foo() public virtual {
@@ -56,12 +56,12 @@ contract C is A {
 }
 
 contract D is B, C {
-    // Tente:
-    // - Chame D.foo e verifique os logs da transação.
-    //   Embora D herde A, B e C, ele só chamou C e depois A. 
-    // - Chame D.bar e verifique os logs da transação
-    //   D chamou C, depois B, e finalmente A.
-    //   Embora super foi chamado 2 vezes (por B e C) ele só chamou A uma vez.
+    // Intenta:
+    // - Llama a D.foo y revisa los logs de la transacción.
+    //   Si bien D hereda A, B y C, solo se llamó a C y después A. 
+    // - Llama a D.bar y revisa los logs de la transacción
+    //   D llamó a C, después B, y finalmente A.
+    //   Sin embargo super fue invocado 2 veces (por B e C) y solo llamó a A una vez.
 
     function foo() public override(B, C) {
         super.foo();

@@ -1,12 +1,12 @@
 # Try Catch
 
-`try / catch` só pode captar erros de chamadas de função externa e criação de contrato.
+`try / catch` solo puede detectar errores de las llamadas de función externa y de la creación de contrato.
 
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
 
-// Contrato externo usado para exemplos de try / catch
+// Contrato externo usado para ejemplos de try / catch
 contract Foo {
     address public owner;
 
@@ -29,11 +29,11 @@ contract Bar {
     Foo public foo;
 
     constructor() {
-        // Este contrato Foo é usado como exemplo de try catch com chamada externa
+        // Este contrato Foo es usado como ejemplo de try catch como llamada externa
         foo = new Foo(msg.sender);
     }
 
-    // Exemplo de try / catch com chamada externa
+    // Ejemplo de try / catch con llamada externa
     // tryCatchExternalCall(0) => Log("external call failed")
     // tryCatchExternalCall(1) => Log("my func was called")
     function tryCatchExternalCall(uint _i) public {
@@ -44,19 +44,19 @@ contract Bar {
         }
     }
 
-    // Exemplo de try / catch com criação de contrato
+    // Ejemplo de try / catch con la creación de contrato
     // tryCatchNewContract(0x0000000000000000000000000000000000000000) => Log("invalid address")
     // tryCatchNewContract(0x0000000000000000000000000000000000000001) => LogBytes("")
     // tryCatchNewContract(0x0000000000000000000000000000000000000002) => Log("Foo created")
     function tryCatchNewContract(address _owner) public {
         try new Foo(_owner) returns (Foo foo) {
-            // você pode usar a variável foo aqui
+            // Puedes usar la variable foo aquí
             emit Log("Foo created");
         } catch Error(string memory reason) {
-            // pega a falha revert() e require()
+            // catch falla en el revert() y require()
             emit Log(reason);
         } catch (bytes memory reason) {
-            // pega a falha assert()
+            // catch falla assert()
             emit LogBytes(reason);
         }
     }

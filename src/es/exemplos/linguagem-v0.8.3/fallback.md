@@ -1,13 +1,13 @@
 # Fallback
 
-`fallback` é uma função que não recebe nenhum argumento e não retorna nada.
+`fallback` es una función que no toma ningún argumento y no regresa nada.
 
-Ela é executada quando
+Es ejecutada cuando
 
-* uma função que não existe é chamada ou quando
-* Ether é enviado diretamente para um contrato mas `receive()` não existe ou `msg.data` não está vazio
+* Una función que no existe es llamada o
+* El Ether es enviado directamente al contrato pero `receive()` no existe o `msg.data` no está vacío
 
-`fallback` tem um limite de gás de 2300 quando chamado por `transfer` ou `send`.
+`fallback` tiene un límite de gas de 2300 cuando es llamada por `transfer` o `send`.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -16,14 +16,19 @@ pragma solidity ^0.8.3;
 contract Fallback {
     event Log(uint gas);
 
-    // Função fallback deve ser declarada como externa.
+    // La función Fallback tiene que ser declarada como externa.
     fallback() external payable {
-        // send / transfer (encaminha 2300 de gás para esta função fallback)
-        // call (encaminha todo o gás)
+        // send / transfer (reenvía 2300 de gas a esta función fallback)
+        // call (reenvía todo el gas)
         emit Log(gasleft());
     }
 
-    // Função auxiliar para verificar o saldo deste contrato
+    // Receive es una variante del fallback que se desencadena cuando msg.data está vacío
+    receive() external payable {
+        emit Log("receive", gasleft());
+    }
+
+    // Función auxiliar que obtiene el balance de este contrato
     function getBalance() public view returns (uint) {
         return address(this).balance;
     }
