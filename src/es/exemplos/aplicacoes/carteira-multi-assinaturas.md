@@ -1,12 +1,12 @@
-# Carteira Multi-Sig
+# Billetera Multi-Sig
 
-Vamos criar uma carteira multi-sig. Aqui estão as especificações.
+Vamos a crear una billetera multi-sig. Aquí están las especificaciones.
 
-Os proprietários da carteira podem
+Los dueños de la billetera pueden:
 
-* submeter uma transação
-* aprovar e revogar aprovação de transações pendentes&#x20;
-* qualquer um pode executar uma transação depois que os proprietários tenham aprovado.
+* Enviar una transacción
+* Aprobar y revocar la aprobación de transacciones pendientes&#x20;
+* Cualquiera puede ejecutar una transacción luego de que suficientes dueños lo hayan aprobado.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -192,7 +192,7 @@ contract MultiSigWallet {
 }
 ```
 
-Eis aqui um contrato para testar envio de transações de uma carteira multi-sig
+Aquí hay un contrato para probar las transacciones que se envían desde la billetera multi-sig
 
 ```solidity
 // SPDX-License-Identifier: MIT
