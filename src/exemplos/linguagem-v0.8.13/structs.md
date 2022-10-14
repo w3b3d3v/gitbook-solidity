@@ -19,7 +19,7 @@ contract Afazeres {
     // Uma array de 'Afazer' structs
     Afazer[] public afazeres;
 
-    function create(string memory _text) public {
+    function create(string calldata _text) public {
         // 3 maneiras de inicializar uma struct
 
         // 1. Chamando como uma função
@@ -44,7 +44,7 @@ contract Afazeres {
     }
 
     // atualizar texto
-    function update(uint _index, string memory _text) public {
+    function update(uint _index, string calldata _text) public {
         Afazer storage afazer = afazeres[_index];
         afazer.texto = _text;
     }
