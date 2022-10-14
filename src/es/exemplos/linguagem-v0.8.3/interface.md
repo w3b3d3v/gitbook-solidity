@@ -1,14 +1,14 @@
-# Interface
+# Interfaz
 
-Você pode interagir com outros contratos declarando uma `Interface`.
+Puedes interactuar con otros contratos declarando la `Interface`.
 
-Interface
+Interfaz
 
-* não pode ter nenhuma função implementada
-* pode herdar de outras interfaces
-* todas as funções declaradas devem ser externas
-* não pode declarar um constructor
-* não pode declarar variáveis de estado
+* No puede tener ninguna función implementada
+* Puede heredar de otras interfaces
+* Todas las funciones declaradas deben ser externas
+* No puede declarar un constructor
+* No puede declarar variables de estado
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -38,7 +38,7 @@ contract MyContract {
     }
 }
 
-// Exemplo de Uniswap 
+// Ejemplo de Uniswap 
 interface UniswapV2Factory {
     function getPair(address tokenA, address tokenB)
         external

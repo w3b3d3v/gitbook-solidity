@@ -6,7 +6,7 @@ title: Introducción
   en Criptomonedas y Blockchains relacionadas a Ethereum.
 :::
 
-Esta es una guía completa para programadores web3 que quieran aprender a programar en Solidity. Fue creada y es mantenida por la comunidad [_web3dev_](https://www.web3dev.com.br).
+Esta es una guía completa para programadores web3 que quieran aprender a programar en Solidity. Fue creada y es mantenida por la comunidad [_web3dev_](https://www.web3dev.com.br)
 
 ### Código Abierto
 
@@ -14,7 +14,7 @@ Esta guía es de código abierto y está disponible en Github. Siéntete libre d
 
 Puedes encontrar el código aquí:
 
-{% embed url="https://github.com/w3b3d3v/gitbook-solidity" %}
+[_Solidity - Github_](https://github.com/w3b3d3v/gitbook-solidity)
 
 ### Contenido
 

@@ -1,4 +1,6 @@
-# Tabla de contenido
+---
+title: Tabla de contenido
+---
 
 * [Introducción](README.md)
 

@@ -1,15 +1,14 @@
 # Import
 
-Você pode importar arquivos locais e externos no Solidity.
+Puedes importar archivos locales y externos en Solidity.
 
 #### Local <a href="#local" id="local"></a>
 
-Aqui está nossa estrutura da pasta.
+Aquí está la estructura de nuestros archivos.
 
 ```solidity
 ├── Import.sol
 └── Foo.sol
-
 ```
 
 Foo.sol
@@ -29,14 +28,14 @@ Import.sol
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
 
-// importa Foo.sol do diretório atual
+// importa Foo.sol del directorio actual
 import "./Foo.sol";
 
 contract Import {
     // Inicializa Foo.sol
     Foo public foo = new Foo();
 
-    // Testa Foo.sol obtendo seu nome.
+    // Prueba Foo.sol obteniendo su nombre.
     function getFooName() public view returns (string memory) {
         return foo.name();
     }
@@ -45,7 +44,7 @@ contract Import {
 
 #### External <a href="#external" id="external"></a>
 
-Você também pode importar de [GitHub](https://github.com) simplesmente copiando o url
+También puedes importar desde [GitHub](https://github.com) simplemente copiando la url
 
 ```
 // https://github.com/owner/repo/blob/branch/path/to/Contract.sol

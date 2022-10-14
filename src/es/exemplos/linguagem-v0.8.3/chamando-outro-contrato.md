@@ -1,12 +1,12 @@
-# Chamando outro Contrato
+# Llamando a otro Contrato
 
-Um contrato pode chamar outros contratos de 2 formas.
+El contrato puede llamar o invocar a otros contratos de dos formas.
 
-A maneira mais fácil é apenas chamá-lo, como `A.foo(x, y, z)`.
+La manera más sencilla es solo llamarlo, como `A.foo(x, y, z)`.
 
-Outra maneira de chamar outros contratos é usar chamada de nível baixo.
+Otra forma de llamar a otros contratos es usando la función de bajo nivel `call`.
 
-Esse método não é recomendado.
+Este método no es el recomendado.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -26,6 +26,21 @@ contract Callee {
         value = msg.value;
 
         return (x, value);
+    }
+}
+
+contract Caller {
+    function setX(Callee _callee, uint _x) public {
+        uint x = _callee.setX(_x);
+    }
+
+    function setXFromAddress(address _addr, uint _x) public {
+        Callee callee = Callee(_addr);
+        callee.setX(_x);
+    }
+
+    function setXandSendEther(Callee _callee, uint _x) public payable {
+        (uint x, uint value) = _callee.setXandSendEther{value: msg.value}(_x);
     }
 }
 ```

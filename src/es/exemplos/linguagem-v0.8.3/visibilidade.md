@@ -1,24 +1,24 @@
-# Visibilidade
+# Visibilidad
 
-Funções e variáveis de estado têm que declarar se elas podem ser acessadas por outros contratos.
+Las funciones y variables de estado tienen que declarar si son accesibles por otros contratos.
 
-Funções podem ser declaradas como:
+Funciones pueden ser declaradas como:
 
-* `public` -  qualquer contrato ou conta pode chamar
-* `private` - só pode ser chamada dentro do contrato que define a função
-* `internal`- só pode ser chamada dentro do contrato que herda uma função internal
-* `external` - só outros contatos e contas podem chamá-la
+* `public` - cualquier contrato o cuenta puede llamar / invocar
+* `private` - solo puede ser llamada dentro del contrato que define la función
+* `internal`- solo puede ser llamada dentro del contrato que hereda una función `internal`
+* `external` - solo otros contratos y cuentas pueden llamar / invocar
 
-Variáveis de estado podem ser declaradas como `public`, `private`, or `internal` mas não `external`.
+Variables de estado pueden ser declaradas como `public`, `private`, o `internal` pero no `external`.
 
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
 
 contract Base {
-    // Função privada só pode ser chamada
-    // - dentro deste contrato
-    // Contratos que herdam esse contrato não podem chamar essa função.
+    // Una función privada solo puede ser llamada
+    // - dentro de este contrato
+    // Contratos que heredan este contrato no pueden invocar esta función.
     function privateFunc() private pure returns (string memory) {
         return "private function called";
     }
@@ -27,9 +27,9 @@ contract Base {
         return privateFunc();
     }
 
-    // Função interna pode ser chamada
-    // - dentro desse contrato
-    // - dentro dos contratos que herdam esse contrato
+    // Funciones internas pueden ser llamadas
+    // - dentro de este contrato
+    // - dentro de los contratos que heredan este contrato
     function internalFunc() internal pure returns (string memory) {
         return "internal function called";
     }
@@ -38,42 +38,42 @@ contract Base {
         return internalFunc();
     }
 
-    // Funções públicas podem ser chamadas
-    // - dentro desse contrato
-    // - dentro de contratos que herdam esse contrato
-    // - por outros contratos e contas
+    // Funciones públicas pueden ser llamadas
+    // - dentro de este contrato
+    // - dentro de contratos que heredan este contrato
+    // - por otros contratos y cuentas
     function publicFunc() public pure returns (string memory) {
         return "public function called";
     }
 
-    // Funções externas só podem ser chamadas
-    // - por outros contratos e contas
+    // Funciones externas solo pueden ser llamadas
+    // - por otros contratos y cuentas
     function externalFunc() external pure returns (string memory) {
         return "external function called";
     }
 
-    // Esta função não compilará já que estamos tentando chamar
-    // uma função externa aqui.
+    // La siguiente función no compilará ya que estamos intentando invocar
+    // a una función externa.
     // function testExternalFunc() public pure returns (string memory) {
     //     return externalFunc();
     // }
 
-    // Variáveis de estado
+    // Variables de estado
     string private privateVar = "my private variable";
     string internal internalVar = "my internal variable";
     string public publicVar = "my public variable";
-    // Variáveis de estado não podem ser externas, então esse código não compilará.
+    // Variables de estado no pueden ser externas, por lo tanto el siguiente código no compilará.
     // string external externalVar = "my external variable";
 }
 
 contract Child is Base {
-    // Contratos herdados não têm acesso a funções privadas
-    // e variáveis de estado.
+    // Contratos heredados no tienen acceso a las funciones privadas
+    // ni a variables de estado.
     // function testPrivateFunc() public pure returns (string memory) {
     //     return privateFunc();
     // }
 
-    // Função interna pode ser chamada dentro de contratos de classe filho.
+    // Funciones internas pueden ser llamada dentro de contratos hijos.
     function testInternalFunc() public pure override returns (string memory) {
         return internalFunc();
     }
