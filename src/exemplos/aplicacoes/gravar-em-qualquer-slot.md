@@ -1,6 +1,6 @@
 # Gravar em qualquer slot
 
-O armazenamento de solidity é como um array de comprimento 2^256. Cada slot no array pode armazenar 32 bytes.
+O armazenamento de solidity é como um array de comprimento 2<sup>256</sup>. Cada slot no array pode armazenar 32 bytes.
 
 As variáveis ​​de estado definem quais slots serão usados ​​para armazenar dados.
 
