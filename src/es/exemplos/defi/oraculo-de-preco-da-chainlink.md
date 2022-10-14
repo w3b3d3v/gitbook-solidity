@@ -1,6 +1,6 @@
-# Oráculo de Preço da Chainlink
+# Oráculo de Precio del Chainlink
 
-#### ETH / USD Price Oracle <a href="#eth--usd-price-oracle" id="eth--usd-price-oracle"></a>
+#### Oráculo de Precio para ETH / USD  <a href="#eth--usd-price-oracle" id="eth--usd-price-oracle"></a>
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -24,7 +24,7 @@ contract ChainlinkPriceOracle {
             uint timeStamp,
             uint80 answeredInRound
         ) = priceFeed.latestRoundData();
-        // for ETH / USD price is scaled up by 10 ** 8
+        // para el precio de ETH / USD se escala por 10 ** 8
         return price / 1e8;
     }
 }

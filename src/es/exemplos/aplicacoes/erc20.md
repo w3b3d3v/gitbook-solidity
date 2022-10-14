@@ -1,13 +1,13 @@
 # ERC20
 
-`Todo contrato que segue o` [ERC20 standard](https://eips.ethereum.org/EIPS/eip-20) é um token ERC20.
+Cualquier contrato que sigue el [ERC20 standard](https://eips.ethereum.org/EIPS/eip-20) es un token ERC20.
 
-Tokens ERC20 fornecem funcionalidades para
+Los tokens ERC20 proveen funcionalidades de
 
-* transferir tokens
-* permitir que outros transfiram tokens em nome do titular do token
+* Transferencia de tokens
+* Permitir que otros transfieran tokens a nombre del titular del token
 
-Eis aqui a interface para ERC20.
+Aquí está la interfaz para el ERC20.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -36,11 +36,11 @@ interface IERC20 {
 }
 ```
 
-### Crie seu próprio token ERC20 <a href="#create-your-own-erc20-token" id="create-your-own-erc20-token"></a>
+### Crea tu propio token ERC20 <a href="#create-your-own-erc20-token" id="create-your-own-erc20-token"></a>
 
-Usando [Open Zeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts) é muito fácil criar seu próprio token ERC20.
+Usando [Open Zeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts) es realmente fácil crear tu propio token ERC20.
 
-Eis aqui um exemplo
+Aquí hay un ejemplo
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -50,31 +50,31 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.0.0/contr
 
 contract MyToken is ERC20 {
     constructor(string memory name, string memory symbol) ERC20(name, symbol) {
-        // Mint 100 tokens para msg.sender
-        // Semelhante a como
-        // 1 dollar = 100 cents
-        // 1 token = 1 * (10 ** decimals)
+        // Mint 100 tokens hacia msg.sender
+        // Similar a como
+        // 1 dólar = 100 centavos
+        // 1 token = 1 * (10 ** decimales)
         _mint(msg.sender, 100 * 10**uint(decimals()));
     }
 }
 ```
 
-### Contrato para trocar tokens <a href="#contract-to-swap-tokens" id="contract-to-swap-tokens"></a>
+### Contrato para intercambiar tokens <a href="#contract-to-swap-tokens" id="contract-to-swap-tokens"></a>
 
-Eis um exemplo de contrato, `TokenSwap`, para negociar token ERC20 por outro.
+Aquí hay un ejemplo de contrato, `TokenSwap`, para intercambiar un token ERC20 por otro.
 
-Este contrato negociará tokens chamando
+Este contrato intercambiará tokens invocando
 
-transferFrom(address sender, address recipient, uint256 amount)
+    transferFrom(address sender, address recipient, uint256 amount)
 
-que irá transferir uma quantidade de token do remetente para o destinatário.
+El cual transferirá la cantidad `amount` de token desde el emisor `sender` hacia el receptor `recipient`.
 
-Para `transferFrom` suceder, o remetente deve
+Para que `transferFrom` sea exitoso, el `sender` debe
 
-* ter mais que o `amount` de tokens no seu saldo
-* permitir `TokenSwap` para retirar o`amount` de tokens chamando `approve`
+* Tener más que `amount` de tokens en su saldo
+* Permitir que `TokenSwap` retire un `amount` de tokens, invocando a `approve`
 
-antes do `TokenSwap`chamar `transferFrom`
+antes de que `TokenSwap` invoque `transferFrom`
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -83,16 +83,16 @@ pragma solidity ^0.8.3;
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.0.0/contracts/token/ERC20/IERC20.sol";
 
 /*
-Como trocar tokens
+Cómo intercambiar los tokens
 
-1. Alice tem 100 tokens de AliceCoin, que é um token ERC20.
-2. Bob tem 100 tokens de BobCoin, que também é um token ERC20.
-3. Alice e Bob querem negociar 10 AliceCoin por 20 BobCoin.
-4. Alice ou Bob implantam TokenSwap
-5. Alice aprova TokenSwap para retirar 10 tokens de AliceCoin
-6. Bob aprova TokenSwap para retirar 20 tokens de BobCoin
-7. Alice ou Bob chamam TokenSwap.swap()
-8. Alice e Bob negociaram tokens com sucesso.
+1. Alice tiene 100 tokens de AliceCoin, el cual es un token ERC20.
+2. Bob tiene 100 tokens de BobCoin, el cual, también, es un token ERC20.
+3. Alice y Bob quieren intercambiar 10 AliceCoin por 20 BobCoin.
+4. Alice o Bob despliegan TokenSwap
+5. Alice aprueba el TokenSwap para retirar 10 tokens de AliceCoin
+6. Bob aprueba el TokenSwap para retirar 20 tokens de BobCoin
+7. Alice o Bob llaman a TokenSwap.swap()
+8. Alice y Bob intercambiaron los tokens exitosamente.
 */
 
 contract TokenSwap {

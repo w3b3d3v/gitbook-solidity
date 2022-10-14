@@ -1,133 +1,27 @@
-# Tabela de Conteúdos
+---
+title: Introdução
+---
+::: tip
+  Outubro de 2021 e temos mais de meio TRILHÃO de dólares investidos e aplicados
+  em Criptomoedas e blockchains que possuem ambiente Ethereum.
+:::
 
-* [Introdução](README.md)
+Este é um guia completo para programadores web3 que desejam aprender a linguagem Solidity. Ele foi criado e é mantido pela comunidade [_web3dev_](https://www.web3dev.com.br)
 
-## Apostila Completa <a href="#apostila" id="apostila"></a>
+### Código Aberto
 
-* [1. Estrutura de Contratos Inteligentes](apostila/estrutura-de-contratos-inteligentes.md)
-* [2. Tipos de Variáveis](apostila/tipos-de-variaveis.md)
-* [3. Funções](apostila/funcoes.md)
-* [4. Parâmetros de estado (view, pure)](apostila/modificadores-de-funcoes-view-pure-constant.md)
-* [5. Visibilidade de Funções (external, public, internal & private)](apostila/visibilidade-de-funcoes-external-public-internal-and-private.md)
-* [6. Visibilidade de Variáveis (public, internal & private)](apostila/visibilidade-de-variaveis-external-public-internal-and-private.md)
-* [7. Variáveis built-in (msg.sender, msg.value...)](apostila/variaveis-built-in-msg.sender-msg.value....md)
-* [8. Arrays (Listas)](apostila/arrays-listas.md)
-* [9. Controladores de Fluxo (if, for, while)](apostila/controladores-de-fluxo-if-for-while.md)
-* [10. Mappings (Dicionários)](apostila/mappings-dicionarios.md)
-* [11. Struct](apostila/11.-struct.md)
-* [12. Enums](apostila/12.-enums.md)
-* [13. Memory vs Storage](apostila/13.-memory-vs-storage.md)
-* [14. Eventos](apostila/14.-eventos.md)
-* [15. Modificadores](apostila/18.-modificadores.md)
-* [16. Constructor](apostila/15.-constructor.md)
-* [17. Funções e Endereços pagáveis (payable)](apostila/15.-funcoes-pagaveis-function-payable.md)
-* [18. Interagindo com outro Contrato](apostila/14.-interagindo-com-outro-contrato.md)
-* [19. Criando contratos à partir de um contrato.](apostila/16.-criando-contratos-a-partir-de-um-contrato..md)
-* [20. Erros](apostila/17.-erros.md)
-* [Extra (avançado)](apostila/extra-avancado/README.md)
-  * [21. Fallback functions](apostila/extra-avancado/19.-fallback-functions.md)
-  * [22. Assembly](apostila/extra-avancado/20.-assembly.md)
-  * [23. Bibliotecas (libraries)](apostila/extra-avancado/21.-bibliotecas-librarys.md)
-  * [24. Herança](apostila/extra-avancado/24.-heranca.md)
+Este guia é código aberto e está disponível no Github. Fique a vontade para colaborar, enviar correções ou novos conteúdos. Certamente você será reconhecido pela comunidade.
 
-## Exemplos
+Você encontra o código aqui:
 
-* [Introdução](exemplos/introducao.md)
-* [Linguagem (v0.8.13)](exemplos/linguagem-v0.8.13/README.md)
-  * [Olá Mundo](exemplos/linguagem-v0.8.13/ola-mundo.md)
-  * [Primeira Aplicação](exemplos/linguagem-v0.8.13/primeira-aplicacao.md)
-  * [Tipos de Dados Primários](exemplos/linguagem-v0.8.13/tipos-dados-primitivos.md)
-  * [Variáveis](exemplos/linguagem-v0.8.13/variaveis.md)
-  * [Constantes](exemplos/linguagem-v0.8.13/constantes.md)
-  * [Imutáveis](exemplos/linguagem-v0.8.13/imutaveis.md)
-  * [Lendo e Escrevendo para uma Variável de Estado](exemplos/linguagem-v0.8.13/lendo-e-escrevendo-para-uma-variavel-de-estado.md)
-  * [Ether e Wei](exemplos/linguagem-v0.8.13/ether-e-wei.md)
-  * [Gás](exemplos/linguagem-v0.8.13/gas.md)
-  * [If/Else](exemplos/linguagem-v0.8.13/if-else.md)
-  * [For e While Loop](exemplos/linguagem-v0.8.13/for-e-while-loop.md)
-  * [Mapping](exemplos/linguagem-v0.8.13/mapping.md)
-  * [Matriz](exemplos/linguagem-v0.8.13/matriz.md)
-  * [Enum](exemplos/linguagem-v0.8.13/enum.md)
-  * [Structs](exemplos/linguagem-v0.8.13/structs.md)
-  * [Localizações de Dados - Armazenamento, Memória e Calldata](exemplos/linguagem-v0.8.13/localizacoes-de-dados-armazenamento-memoria-e-calldata.md)
-  * [Função](exemplos/linguagem-v0.8.13/funcao.md)
-  * [Funções View e Pure](exemplos/linguagem-v0.8.13/funcoes-view-e-pure.md)
-  * [Erro](exemplos/linguagem-v0.8.13/erro.md)
-  * [Modificador de função](exemplos/linguagem-v0.8.13/modificador-de-funcao.md)
-  * [Eventos](exemplos/linguagem-v0.8.13/eventos.md)
-  * [Constructor](exemplos/linguagem-v0.8.13/constructor.md)
-  * [Herança](exemplos/linguagem-v0.8.13/heranca.md)
-  * [Sombreamento de Variáveis de Estado Herdadas](exemplos/linguagem-v0.8.13/sombreamento-de-variaveis-de-estado-herdadas.md)
-  * [Chamando Contratos de Classe Pai](exemplos/linguagem-v0.8.13/chamando-contratos-de-classe-pai.md)
-  * [Visibilidade](exemplos/linguagem-v0.8.13/visibilidade.md)
-  * [Interface](exemplos/linguagem-v0.8.13/interface.md)
-  * [Pagável](exemplos/linguagem-v0.8.13/pagavel.md)
-  * [Enviando Ether (transferir, enviar, chamar)](exemplos/linguagem-v0.8.13/enviando-ether-transferir-enviar-chamar.md)
-  * [Fallback](exemplos/linguagem-v0.8.13/fallback.md)
-  * [Call](exemplos/linguagem-v0.8.13/call.md)
-  * [Delegatecall](exemplos/linguagem-v0.8.13/delegatecall.md)
-  * [Seletor de Função](exemplos/linguagem-v0.8.13/seletor-de-funcao.md)
-  * [Chamando outro Contrato](exemplos/linguagem-v0.8.13/chamando-outro-contrato.md)
-  * [Contrato que cria outros Contratos](exemplos/linguagem-v0.8.13/contrato-que-cria-outros-contratos.md)
-  * [Try Catch](exemplos/linguagem-v0.8.13/try-catch.md)
-  * [Import](exemplos/linguagem-v0.8.13/import.md)
-  * [Biblioteca](exemplos/linguagem-v0.8.13/biblioteca.md)
-  * [Codificação ABI](exemplos/linguagem-v0.8.13/codificacao-abi.md)
-  * [Decodificação ABI](exemplos/linguagem-v0.8.13/decodificacao-abi.md)
-  * [Hashing with Keccak256](exemplos/linguagem-v0.8.13/hashing-with-keccak256.md)
-  * [Verificando Assinatura](exemplos/linguagem-v0.8.13/verificando-assinatura.md)
-  * [Técnicas de economia de gás](exemplos/linguagem-v0.8.13/tecnicas-de-economia-de-gas.md)
-  * [Operadores bit a bit](exemplos/linguagem-v0.8.13/operadores-bit-a-bit.md)
-* [Aplicações](exemplos/aplicacoes/README.md)
-  * [Carteira Multi-Sig](exemplos/aplicacoes/carteira-multi-assinaturas.md)
-  * [Árvore de Merkle](exemplos/aplicacoes/arvore-de-merkle.md)
-  * [Mapping Iterável](exemplos/aplicacoes/mapping-iteravel.md)
-  * [ERC20](exemplos/aplicacoes/erc20.md)
-  * [Endereço de Contrato pré-computado com Create2](exemplos/aplicacoes/endereco-de-contrato-pre-computado-com-create2.md)
-  * [Contrato Proxy Mínimo](exemplos/aplicacoes/contrato-proxy-minimo.md)
-  * [Implante qualquer Contrato](exemplos/aplicacoes/implante-qualquer-contrato.md)
-  * [Canal de Pagamento Unidirecional](exemplos/aplicacoes/canal-de-pagamento-unidirecional.md)
-  * [Canal de Pagamento Bidirecional](exemplos/aplicacoes/canal-de-pagamento-bidirecional.md)
-  * [Leilão Inglês](exemplos/aplicacoes/leilao-ingles.md)
-  * [Leilão Holandês](exemplos/aplicacoes/leilao-holandes.md)
-* [Hacks](exemplos/hacks/README.md)
-  * [Reentrada](exemplos/hacks/reentrada.md)
-  * [Overflow e Underflow Aritméticos](exemplos/hacks/overflow-e-underflow-aritmeticos.md)
-  * [Autodestruição](exemplos/hacks/autodestruicao.md)
-  * [Acessando Dados Privados](exemplos/hacks/acessando-dados-privados.md)
-  * [Delegatecall](exemplos/hacks/delegatecall.md)
-  * [Fonte de Aleatoriedade](exemplos/hacks/fonte-de-aleatoriedade.md)
-  * [Recusa de Serviço](exemplos/hacks/recusa-de-servico.md)
-  * [Phishing com tx.origin](exemplos/hacks/phishing-com-tx.origin.md)
-  * [Escondendo Códigos Maliciosos com Contrato Externo](exemplos/hacks/escondendo-codigos-maliciosos-com-contrato-externo.md)
-  * [Honeypot](exemplos/hacks/honeypot.md)
-  * [Front Running](exemplos/hacks/front-running.md)
-  * [Manipulação do Bloco Timestamp](exemplos/hacks/manipulacao-do-bloco-timestamp.md)
-  * [Repetição de Assinatura](exemplos/hacks/repeticao-de-assinatura.md)
-  * [Ignorar a Verificação do Tamanho do Contrato](exemplos/hacks/ignorar-a-verificacao-do-tamanho-do-contrato.md)
-* [DeFi](exemplos/defi/README.md)
-  * [Exemplos de Uniswap V2](exemplos/defi/exemplos-de-uniswap-v2.md)
-  * [Oráculo de Preço da Chainlink](exemplos/defi/oraculo-de-preco-da-chainlink.md)
-  * [Recompensas de Aposta](exemplos/defi/recompensas-de-aposta.md)
+[_Solidity - Github_](https://github.com/w3b3d3v/gitbook-solidity)
 
-## \[EVM] Máquina VIrtual Ethereum
+### Conteúdo
 
-* [Accounts](evm-maquina-virtual-ethereum/accounts.md)
-* [Transactions](evm-maquina-virtual-ethereum/transactions.md)
-* [Gas (Taxas)](evm-maquina-virtual-ethereum/gas-taxas.md)
-* [OP\_CODES](evm-maquina-virtual-ethereum/op\_codes.md)
-* [Bytecodes](evm-maquina-virtual-ethereum/bytecodes.md)
-* [Patterns and Standards](evm-maquina-virtual-ethereum/patterns-and-standards/README.md)
-  * [ERC20 & EIP-20](evm-maquina-virtual-ethereum/patterns-and-standards/erc20-and-eip-20.md)
+Você vai encontrar nesta documentação os seguintes conteúdos:
 
-## Segurança
+[Apostila Completa](broken-reference) - Uma apostila com um passo a passo para você aprender como desenvolver um smart contract em Solidity.
 
-* [Vulnerabilidades Conhecidas](seguranca/vulnerabilidades-conhecidas/README.md)
-  * [Função de re-entrada (Reetrancy)](seguranca/vulnerabilidades-conhecidas/funcao-de-re-entrada-reetrancy.md)
-  * [Overflow e Underflow Aritmético](seguranca/vulnerabilidades-conhecidas/overflow-e-underflow-aritmetico.md)
+[Exemplos](exemplos/linguagem-v0.8.3/) - Exemplos de códigos muito direto ao ponto se você precisa de uma referência rápida da sintaxe da linguagem.
 
-## Ambiente de Desenvolvimento <a href="#ambiente" id="ambiente"></a>
-
-* [Remix IDE](ambiente/untitled.md)
-* [Truffle](ambiente/truffle.md)
-* [Hardhat](ambiente/hardhat.md)
+[\[EVM\] Máquina Virtual Ethereum](broken-reference) - Explicação sobre o funcionamento da EVM que é utilizado na rede Ethereum e também em outras redes como Fantom, Polygon e Binance Smart Chain.

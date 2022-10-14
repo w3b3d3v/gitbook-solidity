@@ -1,7 +1,7 @@
 module.exports = [
   "/es/",
   {
-    title: "Apostila Completa",
+    title: "Guía Completa",
     path: "/es/apostila/",
     collapsable: true,
     children: [

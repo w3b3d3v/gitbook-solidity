@@ -1,13 +1,13 @@
-# Mapping Iterável
+# Mapping Iterable
 
-Você não pode iterar através de um `mapping`. Aqui está um exemplo de como criar um `mapping` iterável.
+No puedes iterar a través de un `mapping`. Aquí hay un ejemplo de cómo crear un `mapping` iterable.
 
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
 
 library IterableMapping {
-    // Mapping iterável do endereço ao uint;
+    // Mapping iterable desde address a uint;
     struct Map {
         address[] keys;
         mapping(address => uint) values;
@@ -70,8 +70,8 @@ contract TestIterableMap {
     function testIterableMap() public {
         map.set(address(0), 0);
         map.set(address(1), 100);
-        map.set(address(2), 200); // insert
-        map.set(address(2), 200); // update
+        map.set(address(2), 200); // inserta
+        map.set(address(2), 200); // actualiza
         map.set(address(3), 300);
 
         for (uint i = 0; i < map.size(); i++) {

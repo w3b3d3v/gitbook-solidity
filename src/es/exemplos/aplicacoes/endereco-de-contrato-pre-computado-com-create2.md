@@ -1,6 +1,6 @@
-# Endereço de Contrato pré-computado com Create2
+# Pre-computar la dirección del contrato con Create2
 
-`Endereço de contrato pode ser pré-computado`, antes do contrato ser implantado usando `create2`
+`La dirección del contrato puede ser pre-computado`, antes que el contrato sea desplegado, usando `create2`
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -9,16 +9,16 @@ pragma solidity ^0.8.3;
 contract Factory {
     event Deployed(address addr, uint salt);
 
-    // 1. Pega o código de bytes do contrato a ser implantado
-    // NOTA: _owner e _foo são argumentos do constructor TestContract's
+    // 1. Obtén el bytecode del contrato que será desplegado
+    // NOTA: _owner y _foo son argumentos del constructor TestContract
     function getBytecode(address _owner, uint _foo) public pure returns (bytes memory) {
         bytes memory bytecode = type(TestContract).creationCode;
 
         return abi.encodePacked(bytecode, abi.encode(_owner, _foo));
     }
 
-    // 2. Computa o endereço do contrato a ser implantado
-    // NOTA: _salt é um número aleatório usado para criar um endereço
+    // 2. Computa la dirección del contrato que será desplegado
+    // NOTA: _salt es un número al azar, usado para crear una dirección
     function getAddress(bytes memory bytecode, uint _salt)
         public
         view
@@ -28,34 +28,34 @@ contract Factory {
             abi.encodePacked(bytes1(0xff), address(this), _salt, keccak256(bytecode))
         );
 
-        // NOTA: lança os últimos 20 bytes do hash para o endereço
+        // NOTA: envía los últimos 20 bytes del hash a la dirección
         return address(uint160(uint(hash)));
     }
 
-    // 3. Implanta o contrato
+    // 3. Despliege del contrato
     // NOTA:
-    // Verifica o evento log Deployed que contém o endereço do TestContract implantado.
-    // O endereço no log deve ser equivalente ao endereço computado de cima.
+    // Revisa el log del evento Deployed, el cual contiene la dirección de TestContract que se desplegó.
+    // La dirección del log debe ser igual a la dirección computada arriba.
     function deploy(bytes memory bytecode, uint _salt) public payable {
         address addr;
 
         /*
-        NOTA: Como criar create2
+        NOTA: Como invocar create2
 
         create2(v, p, n, s)
-        cria um novo contrato com código na memória p para p + n
-        e envia v wei
-        e retorna o novo endereço
-        onde novo endereço = primeiros 20 bytes de keccak256(0xff + address(this) + s + keccak256(mem[p…(p+n)))
-              s = valor big-endian 256-bit 
+        Crea un nuevo contrato con el código en memoria desde p hacia p + n
+        Envía v wei
+        Devuelve la nueva dirección
+        Donde la nueva dirección = primeros 20 bytes de keccak256(0xff + address(this) + s + keccak256(mem[p…(p+n)))
+              s = big-endian valor 256-bit 
         */
         assembly {
             addr := create2(
-                callvalue(), // wei enviado com a chamada atual
-                // O código real começa depois de saltar os primeiros 32 bytes
+                callvalue(), // wei enviado por la invocación actual 
+                // El código actual comienza luego de saltarse los primeros 32 bytes
                 add(bytecode, 0x20),
-                mload(bytecode), // Carrega o tamanho do código contido nos primeiros 32 bytes
-                _salt // Salt dos argumentos de função
+                mload(bytecode), // Carga el tamaño del código contenido en los primeros 32 bytes
+                _salt // Salt de los argumentos de función
             )
 
             if iszero(extcodesize(addr)) {

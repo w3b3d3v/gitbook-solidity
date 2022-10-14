@@ -1,10 +1,10 @@
 # Call
 
-`call` é uma função de baixo nível para interagir com outros contratos.
+`call` es una función de bajo nivel para interactuar con otros contratos.
 
-Este é o método recomendado para ser usado quando você está somente enviando Ether via chamada da função `fallback`.
+Este es el método recomendado a usar cuando solo estás enviado Ether a través de la llamada de la función `fallback`.
 
-Contudo não é uma forma recomendada para chamar funções existentes.
+Ahora bien, esta no es la manera recomendada de llamar a las funciones existentes.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -27,10 +27,10 @@ contract Receiver {
 contract Caller {
     event Response(bool success, bytes data);
 
-    // Vamos imaginar que o contrato B não tenha o código fonte para 
-    // contrato A, mas nós sabemos o endereço de A e a função para chamar.
+    // Imaginemos que el contrato invocado Caller no tiene código fuente para
+    // cl contrato Receiver, pero si sabemos la dirección del contrato Receiver y la función para llamar.
     function testCallFoo(address payable _addr) public payable {
-        // Você pode enviar ether e especificar uma quantidade de gás personalizada
+        // Puedes enviar Ether y personalizar la cantidad de gas
         (bool success, bytes memory data) = _addr.call{value: msg.value, gas: 5000}(
             abi.encodeWithSignature("foo(string,uint256)", "call foo", 123)
         );
@@ -38,7 +38,7 @@ contract Caller {
         emit Response(success, data);
     }
 
-    // Chamando uma função que não existe aciona a função fallback.
+    // Invocar a una función que no existe desencadena la función fallback.
     function testCallDoesNotExist(address _addr) public {
         (bool success, bytes memory data) = _addr.call(
             abi.encodeWithSignature("doesNotExist()")
