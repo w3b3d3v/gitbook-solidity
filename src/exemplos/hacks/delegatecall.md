@@ -1,21 +1,21 @@
 # Delegatecall
 
-#### Vulnerabilidade <a href="#vulnerability" id="vulnerability"></a>
+</h4><a href="#vulnerability" id="vulnerability">Vulnerabilidade</a></h4>
 
-`delegatecall`é complicado de usar e seu uso errado ou entendimento incorreto pode levar a resultados devastadores.
+`delegatecall` é complicado de usar e seu uso errado ou entendimento incorreto pode levar a resultados devastadores.
 
 Você deve ter 2 coisas em mente quando usar o `delegatecall`
 
 1. `delegatecall` preserva o contexto (armazenagem, chamador etc...)
-2. o layout da armazenagem deve ser o mesmo que o do contrato que faz a chamada `delegatecall` e do contrato que está sendo chamado.
+2. O layout de armazenamento deve ser o mesmo para a chamada do contrato `delegatecall` e do contrato que está sendo chamado.
 
 ```solidity
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.3;
+pragma solidity ^0.8.13;
 
 /*
 HackMe é um contrato que usa delegatecall para executar código.
-Não é evidente que o proprietário do HackMe pode ser mudado já que não há 
+Não é evidente que o proprietário do HackMe pode ser mudado já que não há
 função dentro HackMe para fazer isso. Contudo um invasor pode roubar o
 contrato para explorar delegatecall. Vejamos como.
 
@@ -33,7 +33,7 @@ Aqui msg.data contém o seletor de função do pwn().
 Isso avisa ao Solidity para chamar a função pwn() dentro do Lib.
 A função pwn() atualiza o proprietário para msg.sender.
 Delegatecall roda o código do Lib usando o contexto do HackMe.
-Consequentemente a armazenagem do HackMe foi atualizada para msg.sender onde 
+Consequentemente a armazenagem do HackMe foi atualizada para msg.sender onde
 msg.sender é o chamador do HackMe, nesse caso, Attack.
 */
 
@@ -72,13 +72,13 @@ contract Attack {
 }
 ```
 
-Aqui está mais um exemplo.
+Aqui está outro exemplo.
 
-Você precisa entender como o Solidity armazena variáveis de estado antes de entender este exploit.
+Você precisará entender como o Solidity armazena as variáveis ​​de estado antes de entender essa exploração.
 
 ```solidity
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.3;
+pragma solidity ^0.8.13;
 
 /*
 Esta é uma versão mais sofisticada do exploit anterior.
@@ -90,7 +90,7 @@ Esta é uma versão mais sofisticada do exploit anterior.
 
 O que aconteceu?
 Observe que as variáveis de estado não estão definidas da mesma forma no Lib
-e HackMe. Isso significa que chamando Lib.doSomething() muda a primeira 
+e HackMe. Isso significa que chamando Lib.doSomething() muda a primeira
 variável de estado dentro do HackMe, que acontece que é o endereço do lib.
 
 Dentro do attack(), a primeira chamada para doSomething() muda o endereço do lib
@@ -150,6 +150,11 @@ contract Attack {
 }
 ```
 
-#### Técnicas preventivas <a href="#preventative-techniques" id="preventative-techniques"></a>
+</h4><a href="#preventative-techniques" id="preventative-techniques">Técnicas preventivas</a></h4>
 
-* Use  `Library sem estado`
+- Usar sem estado `Library`
+
+## Teste no Remix
+
+- [Delegatecall_1.sol](https://remix.ethereum.org/#code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCi8qCkhhY2tNZSBlIHVtIGNvbnRyYXRvIHF1ZSB1c2EgZGVsZWdhdGVjYWxsIHBhcmEgZXhlY3V0YXIgY29kaWdvLgpOYW8gZSBldmlkZW50ZSBxdWUgbyBwcm9wcmlldGFyaW8gZG8gSGFja01lIHBvZGUgc2VyIG11ZGFkbyBqYSBxdWUgbmFvIGhhIApmdW5jYW8gZGVudHJvIEhhY2tNZSBwYXJhIGZhemVyIGlzc28uIENvbnR1ZG8gdW0gaW52YXNvciBwb2RlIHJvdWJhciBvCmNvbnRyYXRvIHBhcmEgZXhwbG9yYXIgZGVsZWdhdGVjYWxsLiBWZWphbW9zIGNvbW8uCgoxLiBBbGljZSBpbXBsYW50YSBMaWIKMi4gQWxpY2UgaW1wbGVtZW50YSBIYWNrTWUgY29tIGVuZGVyZWNvIGRvIExpYgozLiBFdmUgaW1wbGVtZW50YSBBdHRhY2sgY29tIGVuZGVyZWNvIGRvIEhhY2tNZQo0LiBFdmUgY2hhbWEgQXR0YWNrLmF0dGFjaygpCjUuIEF0dGFjayBlIGFnb3JhIG8gcHJvcHJpZXRhcmlvIGRvIEhhY2tNZQoKTyBxdWUgYWNvbnRlY2V1PwpFdmUgY2hhbW91IEF0dGFjay5hdHRhY2soKS4KQXR0YWNrIGNoYW1vdSBhIGZ1bmNhbyBmYWxsYmFjayBkbyBIYWNrTWUgZW52aWFuZG8gbyBzZWxldG9yIGRlIGZ1bmNhbwpkbyBwd24oKS4gSGFja01lIGVuY2FtaW5oYSBhIGNoYW1hZGEgcGFyYSBvIExpYiB1c2FuZG8gZGVsZWdhdGVjYWxsLgpBcXVpIG1zZy5kYXRhIGNvbnRlbSBvIHNlbGV0b3IgZGUgZnVuY2FvIGRvIHB3bigpLgpJc3NvIGF2aXNhIGFvIFNvbGlkaXR5IHBhcmEgY2hhbWFyIGEgZnVuY2FvIHB3bigpIGRlbnRybyBkbyBMaWIuCkEgZnVuY2FvIHB3bigpIGF0dWFsaXphIG8gcHJvcHJpZXRhcmlvIHBhcmEgbXNnLnNlbmRlci4KRGVsZWdhdGVjYWxsIHJvZGEgbyBjb2RpZ28gZG8gTGliIHVzYW5kbyBvIGNvbnRleHRvIGRvIEhhY2tNZS4KQ29uc2VxdWVudGVtZW50ZSBhIGFybWF6ZW5hZ2VtIGRvIEhhY2tNZSBmb2kgYXR1YWxpemFkYSBwYXJhIG1zZy5zZW5kZXIgb25kZSAKbXNnLnNlbmRlciBlIG8gY2hhbWFkb3IgZG8gSGFja01lLCBuZXNzZSBjYXNvLCBBdHRhY2suCiovCgpjb250cmFjdCBMaWIgewogICAgYWRkcmVzcyBwdWJsaWMgb3duZXI7CgogICAgZnVuY3Rpb24gcHduKCkgcHVibGljIHsKICAgICAgICBvd25lciA9IG1zZy5zZW5kZXI7CiAgICB9Cn0KCmNvbnRyYWN0IEhhY2tNZSB7CiAgICBhZGRyZXNzIHB1YmxpYyBvd25lcjsKICAgIExpYiBwdWJsaWMgbGliOwoKICAgIGNvbnN0cnVjdG9yKExpYiBfbGliKSB7CiAgICAgICAgb3duZXIgPSBtc2cuc2VuZGVyOwogICAgICAgIGxpYiA9IExpYihfbGliKTsKICAgIH0KCiAgICBmYWxsYmFjaygpIGV4dGVybmFsIHBheWFibGUgewogICAgICAgIGFkZHJlc3MobGliKS5kZWxlZ2F0ZWNhbGwobXNnLmRhdGEpOwogICAgfQp9Cgpjb250cmFjdCBBdHRhY2sgewogICAgYWRkcmVzcyBwdWJsaWMgaGFja01lOwoKICAgIGNvbnN0cnVjdG9yKGFkZHJlc3MgX2hhY2tNZSkgewogICAgICAgIGhhY2tNZSA9IF9oYWNrTWU7CiAgICB9CgogICAgZnVuY3Rpb24gYXR0YWNrKCkgcHVibGljIHsKICAgICAgICBoYWNrTWUuY2FsbChhYmkuZW5jb2RlV2l0aFNpZ25hdHVyZSgicHduKCkiKSk7CiAgICB9Cn0=&version=soljson-v0.8.13+commit.abaa5c0e.js)
+- [Delegatecall_2.sol](https://remix.ethereum.org/#code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCi8qCkVzdGEgZSB1bWEgdmVyc2FvIG1haXMgc29maXN0aWNhZGEgZG8gZXhwbG9pdCBhbnRlcmlvci4KCjEuIEFsaWNlIGltcGxhbnRhIExpYiBlIEhhY2tNZSBjb20gZW5kZXJlY28gZG8gTGliCjIuIEV2ZSBpbXBsYW50YSBBdHRhY2sgY29tIGVuZGVyZWNvIGRvIEhhY2tNZQozLiBFdmUgY2hhbWEgQXR0YWNrLmF0dGFjaygpCjQuIEF0dGFjayBhZ29yYSBlIG8gcHJvcHJpZXRhcmlvIGRvIEhhY2tNZQoKTyBxdWUgYWNvbnRlY2V1PwpPYnNlcnZlIHF1ZSBhcyB2YXJpYXZlaXMgZGUgZXN0YWRvIG5hbyBlc3RhbyBkZWZpbmlkYXMgZGEgbWVzbWEgZm9ybWEgbm8gTGliCmUgSGFja01lLiBJc3NvIHNpZ25pZmljYSBxdWUgY2hhbWFuZG8gTGliLmRvU29tZXRoaW5nKCkgbXVkYSBhIHByaW1laXJhIAp2YXJpYXZlbCBkZSBlc3RhZG8gZGVudHJvIGRvIEhhY2tNZSwgcXVlIGFjb250ZWNlIHF1ZSBlIG8gZW5kZXJlY28gZG8gbGliLgoKRGVudHJvIGRvIGF0dGFjaygpLCBhIHByaW1laXJhIGNoYW1hZGEgcGFyYSBkb1NvbWV0aGluZygpIG11ZGEgbyBlbmRlcmVjbyBkbyBsaWIKYXJtYXplbmFkbyBubyBIYWNrTWUuIE8gZW5kZXJlY28gZG8gbGliIGFnb3JhIGVzdGEgY29uZmlndXJhZG8gcGFyYSBvIEF0dGFjay4KQSBzZWd1bmRhIGNoYW1hZGEgcGFyYSBkb1NvbWV0aGluZygpIGNoYW1hIEF0dGFjay5kb1NvbWV0aGluZygpIGUgYXF1aSB0ZW1vcwphIG11ZGFuY2EgZG8gcHJvcHJpZXRhcmlvLgoqLwoKY29udHJhY3QgTGliIHsKICAgIHVpbnQgcHVibGljIHNvbWVOdW1iZXI7CgogICAgZnVuY3Rpb24gZG9Tb21ldGhpbmcodWludCBfbnVtKSBwdWJsaWMgewogICAgICAgIHNvbWVOdW1iZXIgPSBfbnVtOwogICAgfQp9Cgpjb250cmFjdCBIYWNrTWUgewogICAgYWRkcmVzcyBwdWJsaWMgbGliOwogICAgYWRkcmVzcyBwdWJsaWMgb3duZXI7CiAgICB1aW50IHB1YmxpYyBzb21lTnVtYmVyOwoKICAgIGNvbnN0cnVjdG9yKGFkZHJlc3MgX2xpYikgewogICAgICAgIGxpYiA9IF9saWI7CiAgICAgICAgb3duZXIgPSBtc2cuc2VuZGVyOwogICAgfQoKICAgIGZ1bmN0aW9uIGRvU29tZXRoaW5nKHVpbnQgX251bSkgcHVibGljIHsKICAgICAgICBsaWIuZGVsZWdhdGVjYWxsKGFiaS5lbmNvZGVXaXRoU2lnbmF0dXJlKCJkb1NvbWV0aGluZyh1aW50MjU2KSIsIF9udW0pKTsKICAgIH0KfQoKY29udHJhY3QgQXR0YWNrIHsKICAgIC8vIENlcnRpZmlxdWUtc2UgZGUgcXVlIG8gbGF5b3V0IGRlIGFybWF6YW5hZ2VtIGUgbyBtZXNtbyBxdWUgbyBkbyBIYWNrTWUKICAgIC8vIElzc28gcGVybWl0aXJhIGEgYXR1YWxpemFjYW8gY29ycmV0YSBkYXMgdmFyaWF2ZWlzIGRlIGVzdGFkbwogICAgYWRkcmVzcyBwdWJsaWMgbGliOwogICAgYWRkcmVzcyBwdWJsaWMgb3duZXI7CiAgICB1aW50IHB1YmxpYyBzb21lTnVtYmVyOwoKICAgIEhhY2tNZSBwdWJsaWMgaGFja01lOwoKICAgIGNvbnN0cnVjdG9yKEhhY2tNZSBfaGFja01lKSB7CiAgICAgICAgaGFja01lID0gSGFja01lKF9oYWNrTWUpOwogICAgfQoKICAgIGZ1bmN0aW9uIGF0dGFjaygpIHB1YmxpYyB7CiAgICAgICAgLy8gc3Vic3RpdHVpIG8gZW5kZXJlY28gZG8gbGliCiAgICAgICAgaGFja01lLmRvU29tZXRoaW5nKHVpbnQodWludDE2MChhZGRyZXNzKHRoaXMpKSkpOwogICAgICAgIC8vIHBhc3NhIHF1YWxxdWVyIG51bWVybyBjb21vIGVudHJhZGEsIGEgZnVuY2FvIGRvU29tZXRoaW5nKCkgYWJhaXhvCiAgICAgICAgLy8gc2VyYSBjaGFtYWRhCiAgICAgICAgaGFja01lLmRvU29tZXRoaW5nKDEpOwogICAgfQoKICAgIC8vIGEgYXNzaW5hdHVyYSBkYSBmdW5jYW8gZGV2ZSBjb3JyZXNwb25kZXIgYSBkYSBIYWNrTWUuZG9Tb21ldGhpbmcoKQogICAgZnVuY3Rpb24gZG9Tb21ldGhpbmcodWludCBfbnVtKSBwdWJsaWMgewogICAgICAgIG93bmVyID0gbXNnLnNlbmRlcjsKICAgIH0KfQ==&version=soljson-v0.8.13+commit.abaa5c0e.js)
