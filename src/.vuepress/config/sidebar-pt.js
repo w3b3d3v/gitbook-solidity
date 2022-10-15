@@ -88,7 +88,7 @@ module.exports = [
           "/exemplos/linguagem-v0.8.3/import.md",
           "/exemplos/linguagem-v0.8.3/biblioteca.md",
           "/exemplos/linguagem-v0.8.3/hashing-with-keccak256.md",
-          "/exemplos/linguagem-v0.8.3/verificando-assinatura.md"
+          "/exemplos/linguagem-v0.8.3/verificando-assinatura.md",
         ],
       },
       {
@@ -130,6 +130,14 @@ module.exports = [
         ],
       },
       {
+        title: "Testes",
+        path: "/exemplos/testes/",
+        children: [
+          "/exemplos/testes/",
+          "/exemplos/testes/echidna.md",
+        ],
+      },
+      {
         title: "DeFi",
         path: "/exemplos/defi/",
         children: [
@@ -153,7 +161,9 @@ module.exports = [
       {
         title: "Patterns and Standards",
         path: "/evm-maquina-virtual-ethereum/patterns-and-standards",
-        children: ["/evm-maquina-virtual-ethereum/patterns-and-standards/erc20-and-eip-20.md"],
+        children: [
+          "/evm-maquina-virtual-ethereum/patterns-and-standards/erc20-and-eip-20.md",
+        ],
       },
     ],
   },
@@ -171,4 +181,4 @@ module.exports = [
       },
     ],
   },
-]
+];
