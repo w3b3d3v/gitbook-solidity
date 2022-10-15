@@ -1,10 +1,9 @@
 ---
-description: >-
-  Muito semelhantes às funções com exceção de "External" que se aplicam somente
-  a funções.
+title: 6. Visibilidade de Variáveis (public, internal & private)
 ---
-
-# 6. Visibilidade de Variáveis (public, internal & private)
+::: tip
+  Muito semelhantes às funções com exceção de "External" que se aplicam somente a funções.
+:::
 
 ## Public
 

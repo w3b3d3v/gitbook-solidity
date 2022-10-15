@@ -1,20 +1,20 @@
-# Seletor de Função
+# Selector de función
 
-Quando uma função é chamada, os 4 primeiros bytes da `calldata` especifica qual função chamar.
+Cuando una función es llamada, los primeros 4 bytes del `calldata` especifican a cuál función invocar.
 
-Esses 4 bytes são chamados seletor de função.
+Estos 4 bytes son llamados selector de función.
 
-Pegue como exemplo, este código abaixo. Ele usa `call` para executar `transfer` num contrato de endereço `addr`.
+Toma por ejemplo, el código de abajo. Usa `call` para ejecutar `transfer` en un contrato de la dirección `addr`.
 
 ```solidity
 addr.call(abi.encodeWithSignature("transfer(address,uint256)", 0xSomeAddress, 123))solid
 ```
 
-Os primeiros 4 bytes retornados de `abi.encodeWithSignature(....)` é o seletor de função.
+Los primeros 4 bytes que regresaron de `abi.encodeWithSignature(....)` es la función de selector.
 
-Talvez você possa salvar uma pequena quantidade de gás se você computar e colocar o seletor da função inline no seu código?
+¿Puede que quizá salves una pequeña cantidad de gas si pre computado y colocas la función de selector en el código?
 
-Aqui está como o seletor de função é computado.
+Aquí está cómo la función del selector es computado.
 
 ```solidity
 // SPDX-License-Identifier: MIT

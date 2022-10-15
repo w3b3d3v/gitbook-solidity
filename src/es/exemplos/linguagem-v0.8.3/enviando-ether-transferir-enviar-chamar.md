@@ -1,30 +1,30 @@
-# Enviando Ether (transferir, enviar, chamar)
+# Enviando Ether (transferencia, envío, llamada)
 
 #### Como enviar Ether? <a href="#how-to-send-ether" id="how-to-send-ether"></a>
 
-Você pode enviar Ether para outros contratos por meio de
+Puedes enviar Ether a otros contratos haciendo
 
-* `transfer` (2300 gás, lança erro)
-* `send` (2300 gás, retorna um bool)
-* `call` (encaminha todo o gás ou coloca gás, retorna um bool)
+* `transfer` (2300 gás, da error)
+* `send` (2300 gás, devuelve un bool)
+* `call` (reenvía todo el gas o establece gas, devuelve un bool)
 
-#### Como receber Ether? <a href="#how-to-receive-ether" id="how-to-receive-ether"></a>
+#### Como recibir Ether? <a href="#how-to-receive-ether" id="how-to-receive-ether"></a>
 
-Um contrato que recebe Ether deve ter pelo menos uma das funções abaixo
+Un contrato que recibe Ether debe tener, al menos, una de las siguientes funciones
 
 * `receive() external payable`
 * `fallback() external payable`
 
-`receive()` é chamada se `msg.data` estiver vazio, caso contrário `fallback()`é chamada.
+`receive()` es llamado si `msg.data` está vacío, si no `fallback()`es llamado / invocado.
 
-#### Qual método você deve usar? <a href="#which-method-should-you-use" id="which-method-should-you-use"></a>
+#### Cuál método debes usar? <a href="#which-method-should-you-use" id="which-method-should-you-use"></a>
 
-`call` em combinação com proteção de reentrada é o método recomendado para ser usado depois de dezembro de 2019.
+`call` en combinación con la protección de reentrada (re-entrancy guard), es el método recomendado a usar a partir de diciembre del 2019.
 
-Proteção contra reentrada&#x20;
+Protégete contra la reentrada&#x20;
 
-* fazendo todas as mudanças de estado antes de chamar outros contratos
-* usando modificador de proteção de reentrada
+* Haciendo todos los cambios de estado antes de llamar a otros contratos
+* Usando el modificador de la protección de reentrada
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -32,25 +32,25 @@ pragma solidity ^0.8.3;
 
 contract ReceiveEther {
     /*
-    Qual fubção é chamada, fallback() ou receive()?
+    Cuál función es invocada, fallback() o receive()?
 
-           envie Ether
+           enviar Ether
                |
-         msg.data está vazia?
+         msg.data está vacío?
               / \
-            sim  não
+            si  no
             /     \
 receive() existe?  fallback()
          /   \
-        sim   não
+        si   no
         /      \
     receive()   fallback()
     */
 
-    // Função para receber Ether. msg.data deve estar vazio
+    // Función para recibir Ether. Msg.data tiene que estar vacío
     receive() external payable {}
 
-    // Função de fallback é chamada quando msg.data não está vazio
+    // Función de fallback es invocada cuando msg.data no está vacío
     fallback() external payable {}
 
     function getBalance() public view returns (uint) {
@@ -60,20 +60,20 @@ receive() existe?  fallback()
 
 contract SendEther {
     function sendViaTransfer(address payable _to) public payable {
-        // Esta função não é mais recomendada para enviar Ether.
+        // Esta función no es recomendada para enviar Ether.
         _to.transfer(msg.value);
     }
 
     function sendViaSend(address payable _to) public payable {
-        // Send retorna um valor boolean indicando sucesso ou falha.
-        // Esta função não é recomendada para enviar Ether.
+        // Send regresa un valor boolean, indicando si fue exitoso o falló.
+        // Esta función no es recomendada para enviar Ether.
         bool sent = _to.send(msg.value);
         require(sent, "Failed to send Ether");
     }
 
     function sendViaCall(address payable _to) public payable {
-        // Call retorna um valor boolean indicando sucesso ou falha.
-        // Esse é o método atual recomendado para ser usado.
+        // Call regresa un valor boolean, indicando si fue exitoso o falló.
+        // Este es el método de uso actual recomendado.
         (bool sent, bytes memory data) = _to.call{value: msg.value}("");
         require(sent, "Failed to send Ether");
     }

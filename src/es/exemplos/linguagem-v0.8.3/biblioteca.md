@@ -1,10 +1,10 @@
-# Biblioteca
+# Librería
 
-Bibliotecas são semelhantes a contratos, mas você não pode declarar nenhuma variável de estado e não pode enviar ether.
+Las librerías son similares a los contratos, pero no puedes declarar ninguna variable de estado y tampoco no puedes enviar ether.
 
-Uma biblioteca é incorporada a um contrato se todas as funções da biblioteca são internas.
+Una librería está integrada al contrato si todas las funciones de la librería son internas.
 
-Caso contrário, a biblioteca deve ser implementada e então vinculada antes do contrato ser implantado.
+De otra forma, la librería debe ser desplegada y luego enlazada antes de que el contrato sea desplegada.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -49,11 +49,11 @@ contract TestSafeMath {
     }
 }
 
-// Função Array para apagar o elemento no index e reorganizar a matriz
-// de forma que não haja espaços entre os elementos.
+// La función Array borra elementos en el índice y reorganiza el array
+// así no hay huecos entre los elementos.
 library Array {
     function remove(uint[] storage arr, uint index) public {
-        // Move o último elemento para o lugar onde será apagado
+        // Mueve el último elemento hacia el lugar que se va a borrar
         require(arr.length > 0, "Can't remove from empty array");
         arr[index] = arr[arr.length - 1];
         arr.pop();
