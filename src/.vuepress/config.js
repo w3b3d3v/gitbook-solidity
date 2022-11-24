@@ -39,7 +39,7 @@ module.exports = {
     // logoDark: "/logo-blue.png",
     lastUpdated: true,
     editLinks: false,
-    sidebar: "auto",
+    sidebar: "false",
 
     author: "WEB3DEV Team",
     repo: "https://github.com/w3b3d3v/gitbook-solidity.git",
