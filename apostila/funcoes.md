@@ -2,7 +2,7 @@
 description: >-
   Funções são usadas para encapsular trechos de código para serem
   chamados/invocados sempre que necessário, evitando assim a necessidade de
-  reescreve-los.
+  reescrevê-los.
 ---
 
 # 3. Funções
@@ -15,7 +15,7 @@ description: >-
 * Possuem um parâmetro de visibilidade.
 * Possuem um identificador de estado.
 * Podem receber modificadores.
-* Podem ser págaveis (receber eth/cripto).
+* Podem ser pagáveis (receber eth/cripto).
 * Podem ou não retornar dados.
 
 ## O corpo de uma função.
@@ -30,7 +30,7 @@ Funções podem receber parâmetros externos, veja a função abaixo.
 
 ![](<../.gitbook/assets/image (33).png>)
 
-Por enquanto preste atenção somente nos parâmetros dentro dos parêntesis (uint a , uint b). Esse trecho de código indica que essa função recebe dois números, um está na variável 'a' e outro está na variável 'b'.&#x20;
+Por enquanto preste atenção somente nos parâmetros dentro dos parêntesis (uint a , uint b). Esse trecho de código indica que essa função recebe dois números, um está na variável 'a' e outro está na variável 'b'.
 
 #### Sem parâmetros
 
@@ -38,15 +38,11 @@ Funções também podem funcionar sem paraêmtros externos, como é o caso dessa
 
 ![](<../.gitbook/assets/image (82).png>)
 
-
-
 ## Visibilidade
 
-Parâmetros de visibilidade definem como essa função poderá ser acessada.&#x20;
+Parâmetros de visibilidade definem como essa função poderá ser acessada.
 
 ![](<../.gitbook/assets/image (116).png>)
-
-
 
 ## Estados
 
@@ -64,7 +60,7 @@ Há muitos casos de uso para modificadores mas um dos mais comuns é definir per
 
 ![](<../.gitbook/assets/image (115).png>)
 
-Nesse caso temos uma função chamada _**somenteAdminAlteraIdade**_ que só poderá ser executada se o modificador _**somenteadm**_ retornar um valor **true**. Esse modificador verifica se o endereço que chamou o contrato é o endereço administrador, se sim irá retornar true e a função será executada.&#x20;
+Nesse caso temos uma função chamada _**somenteAdminAlteraIdade**_ que só poderá ser executada se o modificador _**somenteadm**_ retornar um valor **true**. Esse modificador verifica se o endereço que chamou o contrato é o endereço administrador, se sim irá retornar true e a função será executada.
 
 ## Funções pagáveis (Payable)
 
