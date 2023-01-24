@@ -18,7 +18,7 @@ Quando precisamos fazer interações por vários itens dentro de um array ou map
 
 ![](<../.gitbook/assets/image (61).png>)
 
-_o valor de_ ** **_**i começa em zero**_ e _****_ irá _**acrescentando 1**_ até chegar no valor armazenado em _**listaDeEnderecos.length**_ que é reponsável por retornar o tamanho da lista. De 1 em 1 o loop irá executar o trecho de código para cada endereço guardado na _**listaDeEnderecos.**_
+_o valor de_ \*\* **\_**i começa em zero**\_ e **_**\*\*\*\***_** irá \_**acrescentando 1**\_ até chegar no valor armazenado em \_**listaDeEnderecos.length**\_ que é reponsável por retornar o tamanho da lista. De 1 em 1 o loop irá executar o trecho de código para cada endereço guardado na \_**listaDeEnderecos.\*\*\_
 
 ## loop While
 

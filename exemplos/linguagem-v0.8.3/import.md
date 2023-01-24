@@ -9,7 +9,6 @@ Aqui está nossa estrutura da pasta.
 ```solidity
 ├── Import.sol
 └── Foo.sol
-
 ```
 
 Foo.sol
