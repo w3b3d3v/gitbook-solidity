@@ -18,7 +18,7 @@ Você encontra o código aqui:
 
 Você vai encontrar nesta documentação os seguintes conteúdos:
 
-[Apostila Completa](broken-reference) - Uma apostila com um passo a passo para você aprender como desenvolver um smart contract em Solidity.
+[Apostila Completa](https://solidity.w3d.community/apostila/) - Uma apostila com um passo a passo para você aprender como desenvolver um smart contract em Solidity.
 
 [Exemplos](exemplos/linguagem-v0.8.3/) - Exemplos de códigos muito direto ao ponto se você precisa de uma referência rápida da sintaxe da linguagem.
 
