@@ -88,7 +88,7 @@ module.exports = [
           "/exemplos/linguagem-v0.8.3/import.md",
           "/exemplos/linguagem-v0.8.3/biblioteca.md",
           "/exemplos/linguagem-v0.8.3/hashing-with-keccak256.md",
-          "/exemplos/linguagem-v0.8.3/verificando-assinatura.md"
+          "/exemplos/linguagem-v0.8.3/verificando-assinatura.md",
         ],
       },
       {
@@ -127,6 +127,9 @@ module.exports = [
           "/exemplos/hacks/manipulacao-do-bloco-timestamp.md",
           "/exemplos/hacks/repeticao-de-assinatura.md",
           "/exemplos/hacks/ignorar-a-verificacao-do-tamanho-do-contrato.md",
+          "/exemplos/hacks/implementar-contratos-diferentes-no-mesmo-endereco.md",
+          "/exemplos/hacks/inflacao-do-cofre.md",
+          "/exemplos/hacks/licenca-WETH.md",
         ],
       },
       {
@@ -153,7 +156,9 @@ module.exports = [
       {
         title: "Patterns and Standards",
         path: "/evm-maquina-virtual-ethereum/patterns-and-standards",
-        children: ["/evm-maquina-virtual-ethereum/patterns-and-standards/erc20-and-eip-20.md"],
+        children: [
+          "/evm-maquina-virtual-ethereum/patterns-and-standards/erc20-and-eip-20.md",
+        ],
       },
     ],
   },
@@ -171,4 +176,4 @@ module.exports = [
       },
     ],
   },
-]
+];
