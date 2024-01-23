@@ -88,24 +88,36 @@ module.exports = [
           "/exemplos/linguagem-v0.8.3/import.md",
           "/exemplos/linguagem-v0.8.3/biblioteca.md",
           "/exemplos/linguagem-v0.8.3/hashing-with-keccak256.md",
-          "/exemplos/linguagem-v0.8.3/verificando-assinatura.md"
+          "/exemplos/linguagem-v0.8.3/verificando-assinatura.md",
         ],
       },
       {
         title: "Aplicações",
         path: "/exemplos/aplicacoes/",
         children: [
+          "/exemplos/aplicacoes/carteira-ether.md",
           "/exemplos/aplicacoes/carteira-multi-assinaturas.md",
           "/exemplos/aplicacoes/arvore-de-merkle.md",
           "/exemplos/aplicacoes/mapping-iteravel",
           "/exemplos/aplicacoes/erc20.md",
+          "/exemplos/aplicacoes/erc721.md",
+          "/exemplos/aplicacoes/erc1155.md",
+          "/exemplos/aplicacoes/transferencia-de-token-sem-gas.md",
+          "/exemplos/aplicacoes/contrato-de-bytecode-simples.md",
           "/exemplos/aplicacoes/endereco-de-contrato-pre-computado-com-create2.md",
           "/exemplos/aplicacoes/contrato-proxy-minimo.md",
+          "/exemplos/aplicacoes/proxy-atualizavel.md",
           "/exemplos/aplicacoes/implante-qualquer-contrato.md",
+          "/exemplos/aplicacoes/gravar-em-qualquer-slot.md",
           "/exemplos/aplicacoes/canal-de-pagamento-unidirecional.md",
           "/exemplos/aplicacoes/canal-de-pagamento-bidirecional.md",
           "/exemplos/aplicacoes/leilao-ingles.md",
           "/exemplos/aplicacoes/leilao-holandes.md",
+          "/exemplos/aplicacoes/vaquinha.md",
+          "/exemplos/aplicacoes/multi-chamadas.md",
+          "/exemplos/aplicacoes/multi-delegatecall.md",
+          "/exemplos/aplicacoes/bloqueio-de-tempo.md",
+          "/exemplos/aplicacoes/exponenciacao-binaria-em-assembly.md",
         ],
       },
       {
@@ -153,7 +165,9 @@ module.exports = [
       {
         title: "Patterns and Standards",
         path: "/evm-maquina-virtual-ethereum/patterns-and-standards",
-        children: ["/evm-maquina-virtual-ethereum/patterns-and-standards/erc20-and-eip-20.md"],
+        children: [
+          "/evm-maquina-virtual-ethereum/patterns-and-standards/erc20-and-eip-20.md",
+        ],
       },
     ],
   },
@@ -171,4 +185,4 @@ module.exports = [
       },
     ],
   },
-]
+];
