@@ -1,4 +1,4 @@
-# Exemplos de Uniswap V2
+# Ejemplos de Uniswap V2
 
 #### Swap <a href="#swap" id="swap"></a>
 
@@ -61,7 +61,7 @@ contract TestUniswap {
             path[2] = _tokenOut;
         }
 
-        // mesmo comprimento que path
+        // misma longitud que path
         uint[] memory amountOutMins = IUniswapV2Router(UNISWAP_V2_ROUTER).getAmountsOut(
             _amountIn,
             path
@@ -72,7 +72,7 @@ contract TestUniswap {
 }
 ```
 
-#### Interfaces <a href="#interfaces" id="interfaces"></a>
+#### Interfaz <a href="#interfaces" id="interfaces"></a>
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -185,4 +185,4 @@ interface IUniswapV2Factory {
 
 #### Links <a href="#links" id="links"></a>
 
-[O que é Uniswap? Tudo que você precisa saber (em inglês)](https://cryptoradar.co/guide/uniswap)
+[Qué es Uniswap? Todo lo que necesitas saber (en inglés)](https://cryptoradar.co/guide/uniswap)

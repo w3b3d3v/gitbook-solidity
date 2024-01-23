@@ -140,6 +140,14 @@ module.exports = [
         ],
       },
       {
+        title: "Testes",
+        path: "/exemplos/testes/",
+        children: [
+          "/exemplos/testes/",
+          "/exemplos/testes/echidna.md",
+        ],
+      },
+      {
         title: "DeFi",
         path: "/exemplos/defi/",
         children: [

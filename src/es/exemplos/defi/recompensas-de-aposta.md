@@ -1,10 +1,10 @@
-# Recompensas de Aposta
+# Recompensas de Apuesta
 
-Este é um exemplo mínimo de um contrato que recompensa usuários por apostarem seu token.
+Este es un ejemplo mínimo de un contrato que recompensa usuarios que apuestan a su token.
 
-O código é uma versão simplificada do Synthetix [StakingRewards.sol](https://github.com/Synthetixio/synthetix/blob/develop/contracts/StakingRewards.sol)
+El código es una versión simplificada do Synthetix [StakingRewards.sol](https://github.com/Synthetixio/synthetix/blob/develop/contracts/StakingRewards.sol)
 
-#### Recompensas de Aposta <a href="#staking-rewards" id="staking-rewards"></a>
+#### Recompensas de Apuesta <a href="#staking-rewards" id="staking-rewards"></a>
 
 ```solidity
 // SPDX-License-Identifier: MIT

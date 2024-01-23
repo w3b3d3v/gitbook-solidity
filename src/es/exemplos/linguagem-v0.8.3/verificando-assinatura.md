@@ -1,31 +1,31 @@
-# Verificando Assinatura
+# Verificación de firma
 
-Mensagens podem ser assinadas fora da rede e depois verificadas na rede usando contrato inteligente.
+Los mensajes pueden ser firmados off chain y luego ser verificados on chain usando un contrato inteligente.
 
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
 
-/* Verificação da assinatura
+/* Verificación de firma
 
-Como assinar e verificar
-# Assinando
-1. Cria uma mensagem para assinar
-2. Cria um hash da mensagem
-3. Assina o hash (fora da rede, mantenha sua chave privada em segredo)
+Cómo firmar y verificar
+# Firmando
+1. Crea un mensaje a firmar
+2. Crea el hash del mensaje
+3. Firma el hash (off chain, mantén secreta tu llave privada)
 
-# Verifique
-1. Recria um hash da mensagem original
-2. Recupera o signatário da assinatura e do hash
-3. Compara o signatário recuperado com o signatário reivindicado
+# Verifica
+1. Recrea el hash del mensaje original
+2. Recupera el firmante de la firma y del hash
+3. Compara la firma recuperada con el firmante solicitado
 */
 
 contract VerifySignature {
-    /* 1. Desbloqueia a conta MetaMask
+    /* 1. Desbloquea la cuenta MetaMask
     ethereum.enable()
     */
 
-    /* 2. Recebe mensagem hash para assinar
+    /* 2. Obtiene el hash del mensaje a firmar
     getMessageHash(
         0x14723A09ACff6D2A60DcdF7aA4AFf308FDDC160C,
         123,
@@ -44,7 +44,7 @@ contract VerifySignature {
         return keccak256(abi.encodePacked(_to, _amount, _message, _nonce));
     }
 
-    /* 3. Assina mensagem hash
+    /* 3. Firma el hash del mensaje
     # usando browser
     account = "copy paste account of signer here"
     ethereum.request({ method: "personal_sign", params: [account, hash]}).then(console.log)
@@ -52,7 +52,7 @@ contract VerifySignature {
     # usando web3
     web3.personal.sign(hash, web3.eth.defaultAccount, console.log)
 
-    Assinatura será diferente para contas diferentes
+    La firma será diferente para cuentas diferentes
     0x993dab3dd91f5c6dc28e17439be475478f5635c92a56e17e82349d3fb2f166196f466c0b4e0c146f285204f0dcb13e5ae67bc33f4b888ec32dfe0a063e8f3f781b
     */
     function getEthSignedMessageHash(bytes32 _messageHash)
@@ -61,7 +61,7 @@ contract VerifySignature {
         returns (bytes32)
     {
         /*
-        A assinatura é gerada assinando um hash keccak256 com o seguinte formato:
+        La firma se produce firmando un hash keccak256 con el siguiente formato:
         "\x19Ethereum Signed Message\n" + len(msg) + msg
         */
         return
@@ -70,13 +70,13 @@ contract VerifySignature {
             );
     }
 
-    /* 4. Verifica a assinatura
-    signatário = 0xB273216C05A8c0D4F0a4Dd0d7Bae1D2EfFE636dd
-    para = 0x14723A09ACff6D2A60DcdF7aA4AFf308FDDC160C
-    quantia = 123
-    mensagem = "coffee and donuts"
+    /* 4. Verifica la firma
+    signer = 0xB273216C05A8c0D4F0a4Dd0d7Bae1D2EfFE636dd
+    to = 0x14723A09ACff6D2A60DcdF7aA4AFf308FDDC160C
+    amount = 123
+    message = "coffee and donuts"
     nonce = 1
-    assinatura =
+    signature =
         0x993dab3dd91f5c6dc28e17439be475478f5635c92a56e17e82349d3fb2f166196f466c0b4e0c146f285204f0dcb13e5ae67bc33f4b888ec32dfe0a063e8f3f781b
     */
     function verify(
@@ -116,23 +116,23 @@ contract VerifySignature {
 
         assembly {
             /*
-            32 primeiros bytes armazena o comprimento da assinatura
-
+            Los primeros 32 bytes almacenan la longitud de la firma
+    
             add(sig, 32) = pointer of sig + 32
-            efetivamente, pula os 32 primeiros bytes da assinatura
-
-            mload(p) carrega os próximos 32 bytes começando no endereço de memória p na memória
+            efectivamente, salta los primeros bytesde la firma
+    
+            mload(p) carga los próximos 32 bytes comenzando por la dirección de la dirección p dentro de la memoria
             */
 
-            // primeiros bytes 32 bytes, depois do prefixo de comprimento
+            // primeros 32 bytes, después del prefijo de la longitud
             r := mload(add(sig, 32))
-            // second 32 bytes
+            // segundos 32 bytes
             s := mload(add(sig, 64))
-            //  byte final (primeiro byte dos próximos 32 bytes)
+            // byte final (el primer byte de los próximos 32 bytes)
             v := byte(0, mload(add(sig, 96)))
         }
 
-        // implicitamente retorna (r, s, v)
+        // implícitamente retorna (r, s, v)
     }
 }
 ```
