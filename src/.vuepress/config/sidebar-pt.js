@@ -127,6 +127,9 @@ module.exports = [
           "/exemplos/hacks/manipulacao-do-bloco-timestamp.md",
           "/exemplos/hacks/repeticao-de-assinatura.md",
           "/exemplos/hacks/ignorar-a-verificacao-do-tamanho-do-contrato.md",
+          "/exemplos/hacks/implementar-contratos-diferentes-no-mesmo-endereco.md",
+          "/exemplos/hacks/inflacao-do-cofre.md",
+          "/exemplos/hacks/licenca-WETH.md",
         ],
       },
       {
